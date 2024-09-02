@@ -1,0 +1,40 @@
+const path = require('path');
+
+module.exports = {
+    mode: 'development',
+    entry: [
+        './public/js/script.js'
+    ],
+    output: {
+        path: path.resolve(__dirname, 'dist'),
+        filename: 'bundle.js'
+    },
+    module: {
+        rules: [
+            {
+                test: /\.js$/,
+                exclude: /node_modules/,
+                // use: {
+                //     loader: 'babel-loader',
+                //     options: {
+                //         presets: ['@babel/preset-env']
+                //     }
+                // }
+            }
+        ]
+    },
+    plugins: [
+        // new Dotenv()
+    ],
+    resolve: {
+        extensions: ['.js', '.jsx']
+    },
+    devServer: {
+        static: {
+            directory: path.join(__dirname, 'dist'),
+        },
+        compress: true,
+        port: 9000
+    },
+    watch: true
+};
