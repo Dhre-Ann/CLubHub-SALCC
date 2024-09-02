@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ClubHub - Home</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Courgette&family=Gurajada&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-gray-300">
+
+    <div class="relative w-full">
+
+        <header class="bg-gray-300 flex flex-col items-center w-full">
+
+            <!-- Tech Proj Label -->
+            <div class="bg-purple-300 top-0 left-0 w-full flex items-center justify-between px-10 py-2">
+                <p class="text-blue-900 text-center">Kdi Dornelly & Valus Joseph</p>
+                <P class="text-blue-900 text-center">Technical Project</P>
+            </div>
+
+            <!-- Club Hub Name -->
+            <div class="relative w-full flex items-center justify-center h-2">
+                <a href="#"
+                    class="text-3xl font-bold text-blue-900 absolute top-8 left-16 inline-block object-cover object-center rounded-full cursor-pointer">Club
+                    Hub</a>
+            </div>
+
+            <!-- Main Nav Bar -->
+            <div class="w-full max-w-6xl flex items-center justify-between py-4 px-10 z-3">
+
+                <ul class="flex gap-16 items-center mx-auto">
+
+                    <div class="flex flex-col items-center">
+                        <li><a href="index.html" class="text-blue-900 text-2xl transition hover:text-blue-700"><i
+                                    class="fa-solid fa-home"></i></a></li>
+                        <a href="index.html" class="text-blue-900 font-bold transition hover:text-blue-700">
+                            <p>Home</p>
+                        </a>
+                    </div>
+
+                    <div class="flex flex-col items-center">
+                        <li><a href="#" class="text-blue-900 text-2xl transition hover:text-blue-700"><i
+                                    class="fa-solid fa-magnifying-glass"></i></a></li>
+                        <a href="#" class="text-blue-900 font-bold transition hover:text-blue-700">
+                            <p>Explore</p>
+                        </a>
+                    </div>
+
+                    <div class="flex flex-col items-center">
+                        <li><a href="forums.html" class="text-blue-900 text-2xl transition hover:text-blue-700"><i
+                                    class="fa-solid fa-photo-film"></i></a></li>
+                        <a href="forums.html" class="text-blue-900 font-bold transition hover:text-blue-700">
+                            <p>Forums</p>
+                        </a>
+                    </div>
+
+                    <div class="flex flex-col items-center">
+                        <li><a href="dashboard.html" class="text-blue-900 text-2xl transition hover:text-blue-700"><i
+                                    class="fa-solid fa-users-rectangle"></i></a></li>
+                        <a href="dashboard.html" class="text-blue-900 font-bold transition hover:text-blue-700">
+                            <p>Dashboard</p>
+                        </a>
+                    </div>
+
+                </ul>
+
+            </div>
+
+            <!-- Login Btn -->
+            <div class="relative w-full flex items-center justify-center h-2">
+                <button
+                    class="bg-blue-900 text-white py-2 px-6 border-2 border-gray-400 rounded-full font-bold transition hover:scale-105 hover:bg-gray-400 hover:text-blue-900 absolute bottom-7 right-16 inline-block object-cover object-center rounded-full cursor-pointer">LOGIN</button>
+            </div>
+
+            <!-- Hamburger Bars to toggle Nav -->
+            <div class="hidden text-blue-900 text-xl cursor-pointer">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+
+            <!-- Drop down nav bar -->
+            <div
+                class="hidden bg-gray-400 py-6 px-3 absolute right-12 top-36 w-64 rounded-2xl z-10 transition-height duration-200 ease-in-out">
+                <ul class="space-y-4 px-6 py-6">
+                    <li><a href="#" class="text-white text-xl transition hover:text-blue-900">Home</a></li>
+                    <li><a href="explore.html" class="text-white text-xl transition hover:text-blue-900">Explore</a>
+                    </li>
+                    <li><a href="forums.html" class="text-white text-xl transition hover:text-blue-900">Forums</a></li>
+                    <li><a href="dashboard.html" class="text-white text-xl transition hover:text-blue-900">Dashboard</a>
+                    </li>
+                </ul>
+                <button
+                    class="bg-blue-900 text-white py-2 w-3/5 mx-auto flex justify-center items-center rounded-full transition hover:scale-105 hover:bg-blue-100 hover:border-blue-900">LOGIN</button>
+            </div>
+
+        </header>
+
+        <main class="w-full">
+
+            <!-- Banner Items -->
+            <div class="flex items-center text-center justify-center">
+                <!-- Banner -->
+                <div class="w-full bg-cover bg-center max-h-96"
+                    style="height:32rem; background-image: url(https://images.pexels.com/photos/1756665/pexels-photo-1756665.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);">
+                    <div class="flex items-center justify-center h-full w-full bg-gray-900 bg-opacity-50">
+                    </div>
+                </div>
+
+                <!-- Overlay div -->
+                <div class="absolute top-36 w-full bg-black bg-cover bg-center opacity-60 h-96"></div>
+
+                <!-- Banner Text -->
+                <div class="absolute w-2/5 px-10 py-16 text-center w-fit shadow-2xl flex flex-col gap-4">
+                    <h1 class="text-white text-6xl font-semibold">Explore</h1>
+                    <h2 class="text-white text-2xl font-semibold">Pick The Club That's Best For You !</h2>
+                </div>
+
+            </div>
+
+
+            <!-- Explore Container -->
+            <div class="flex w-full gap-4 p-4">
+
+                <!-- Sidebar -->
+                <div class="h-screen w-1/5 ml-0 box-border shadow-lg rounded-lg">
+                    <div
+                        class="bg-purple-400 p-6 text-center font-semibold rounded-t-lg">
+                        <h2 class="text-3xl text-center text-black">Filter</h2>
+                    </div>
+
+                    <!-- Search Container -->
+                    <div class="p-7">
+                        <input type="text" id="search-club-name"
+                            class="w-full p-2 mt-7 text-lg font-medium leading-6 text-gray-700 bg-white border border-gray-300 rounded-lg focus:border-gray-400 focus:outline-none focus:ring-1 focus:ring-blue-100"
+                            placeholder="Search Club Name...">
+                    </div>
+
+                    <!-- Divider -->
+                    <hr class="border-0 h-0 border-t border-gray-200 border-b border-gray-700">
+
+                    <!-- Tags Dropdown -->
+                    <div class="flex justify-between my-10">
+                        <div class="w-full p-7">
+                            <input type="text" id="tag-search"
+                                class="w-full p-2 mt-7 text-lg font-medium leading-6 text-gray-700 bg-white border border-gray-300 rounded-lg focus:border-gray-400 focus:outline-none focus:ring-1 focus:ring-blue-100"
+                                placeholder="Search Club Tags...">
+                            <div id="tag-dropdown" class="hidden w-full p-3 border border-gray-300 rounded-lg box-border text-lg h-40 overflow-y-auto bg-opacity-70 backdrop-filter backdrop-blur-md">
+                                
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Selected Tags Container -->
+                    <div class="grid grid-cols-2 sm:grid-cols-4 gap-1 mt-2">
+                        <div class="bg-teal-100 rounded-lg p-1 overflow-hidden text-ellipsis whitespace-nowrap mb-2">
+                            Selected Tag <i class="ml-1 cursor-pointer">x</i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Main Content -->
+                <div class="w-4/5 rounded-lg shadow-lg">
+                    <!-- Heading -->
+                    <div class="bg-purple-400 p-6 text-center font-semibold rounded-t-lg">
+                        <h2 class="text-3xl text-black">Browse Clubs</h2>
+                    </div>
+                    <!-- Main -->
+                    <div class="p-5">
+                        <div class="grid gap-6 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+
+                            <!-- Club Cards -->
+
+                            <!-- Debate -->
+                            <div data-tags="communication acedemic" id="club-container"
+                                class="bg-blue-100 rounded-xl shadow-lg overflow-hidden w-full h-fit mt-2 mb-2 mx-auto bg-opacity-30 border border-gray-300 transition duration-300 hover:shadow-2xl">
+                                <a href="clubs/Debate.html">
+                                    <div class="relative">
+                                        <img class="h-52 w-full object-cover"
+                                            src="https://media.licdn.com/dms/image/C561BAQHGAnfktt_K3Q/company-background_10000/0/1595445755189/bocconi_students_debate_club_cover?e=2147483647&v=beta&t=nukBkLMYBJnwFRVBe15NDHIdBQ0gOdB3k0psnUX8CI4"
+                                            alt="Club Image">
+                                    </div>
+                                    <div class="flex flex-col items-start p-5 bg-opacity-20">
+                                        <span
+                                            class="bg-blue-300 rounded-full text-xs text-white mb-2 px-3 py-1 uppercase">Academic</span>
+                                        <span
+                                            class="bg-purple-900 rounded-full text-xs text-white mb-2 px-3 py-1 uppercase">Communication</span>
+                                        <h3 id="club-name-explore" class="mt-2 mb-2">Debate Society</h3>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <!-- Interact Club -->
+                            <div data-tags="communityService humanitarian" id="club-container"
+                                class="bg-blue-100 rounded-xl shadow-lg overflow-hidden w-full h-fit mt-2 mb-2 mx-auto bg-opacity-30 border border-gray-300 transition duration-300 hover:shadow-2xl">
+                                <a href="clubs/InteractClub.html">
+                                    <div class="relative">
+                                        <img class="h-52 w-full object-cover"
+                                            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSv8SmV4WBNfUR8Hr5Al5mU5OsgKMsg05JQN1L906S1drNuwq0u"
+                                            alt="Club Image">
+                                    </div>
+                                    <div class="flex flex-col items-start p-5 bg-opacity-20">
+                                        <span
+                                            class="bg-green-500 rounded-full text-xs text-white mb-2 px-3 py-1 uppercase">Community
+                                            Service</span>
+                                        <span
+                                            class="bg-purple-900 rounded-full text-xs text-white mb-2 px-3 py-1 uppercase">Humanitarian</span>
+                                        <h3 id="club-name-explore" class="mt-2 mb-2">Interact Club</h3>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <!-- Circle K Club -->
+                            <div data-tags="communication acedemic" id="club-container"
+                                class="bg-blue-100 rounded-xl shadow-lg overflow-hidden w-full h-fit mt-2 mb-2 mx-auto bg-opacity-30 border border-gray-300 transition duration-300 hover:shadow-2xl">
+                                <a href="clubs/CircleK.html">
+                                    <div class="relative">
+                                        <img class="h-52 w-full object-cover"
+                                            src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRbct1sKhECtaH0TZOZ7ME6TQ70Sl51UwZmtbVI-d_7iqf9Z_e1"
+                                            alt="Club Image">
+                                    </div>
+                                    <div class="flex flex-col items-start p-5 bg-opacity-20">
+                                        <span
+                                            class="bg-green-500 rounded-full text-xs text-white mb-2 px-3 py-1 uppercase">Community
+                                            Service</span>
+                                        <span
+                                            class="bg-purple-900 rounded-full text-xs text-white mb-2 px-3 py-1 uppercase">Humanitarian</span>
+                                        <h3 id="club-name-explore" class="mt-2 mb-2">Circle K International</h3>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <!-- Entrepreneurship Club -->
+                            <div data-tags="communication acedemic"
+                                class="bg-blue-100 rounded-xl shadow-lg overflow-hidden w-full h-fit mt-2 mb-2 mx-auto bg-opacity-30 border border-gray-300 transition duration-300 hover:shadow-2xl">
+                                <a href="clubs/EntrepreneurshipClub.html">
+                                    <div class="relative">
+                                        <img class="h-52 w-full object-cover"
+                                            src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRYZIv3TwwkYeqtOelVvaXyQFckG9CaNnzFSU97LsMYmcm1sicF"
+                                            alt="Club Image">
+                                    </div>
+                                    <div class="flex flex-col items-start p-5 bg-opacity-20">
+                                        <span
+                                            class="bg-purple-900 rounded-full text-xs text-white mb-2 px-3 py-1 uppercase">Communication</span>
+                                        <span
+                                            class="bg-blue-300 rounded-full text-xs text-white mb-2 px-3 py-1 uppercase">Academic</span>
+                                        <h3 id="club-name-explore" class="mt-2 mb-2">Entrepreneurship Club</h3>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <!-- Media Club -->
+                            <div data-tags="communication acedemic"
+                                class="bg-blue-100 rounded-xl shadow-lg overflow-hidden w-full h-fit mt-2 mb-2 mx-auto bg-opacity-30 border border-gray-300 transition duration-300 hover:shadow-2xl">
+                                <a href="clubs/MediaClub.html">
+                                    <div class="relative">
+                                        <img class="h-52 w-full object-cover"
+                                            src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQYgukrhLGs6IF4SD9znO3-1oC5DI75aQjg1qxIuq91JS3OfGYG"
+                                            alt="Club Image">
+                                    </div>
+                                    <div class="flex flex-col items-start p-5 bg-opacity-20">
+                                        <span
+                                            class="bg-green-500 rounded-full text-xs text-white mb-2 px-3 py-1 uppercase">Tech</span>
+                                        <span
+                                            class="bg-purple-900 rounded-full text-xs text-white mb-2 px-3 py-1 uppercase">Communication</span>
+                                        <h3 id="club-name-explore" class="mt-2 mb-2">Media Club</h3>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <!-- Peer Helpers Club -->
+                            <div data-tags="communication acedemic" id="club-container"
+                                class="bg-blue-100 rounded-xl shadow-lg overflow-hidden w-full h-fit mt-2 mb-2 mx-auto bg-opacity-30 border border-gray-300 transition duration-300 hover:shadow-2xl">
+                                <a href="clubs/PeerHelpers.html">
+                                    <div class="relative">
+                                        <img class="h-52 w-full object-cover"
+                                            src="https://www.acsboe.org/cms/lib/AL01828617/Centricity/Domain/2821/Peer%20Helper%20Programimages.jpg"
+                                            alt="Club Image">
+                                    </div>
+                                    <div class="flex flex-col items-start p-5 bg-opacity-20">
+                                        <span
+                                            class="bg-purple-900 rounded-full text-xs text-white mb-2 px-3 py-1 uppercase">Communication</span>
+                                        <span
+                                            class="bg-green-500 rounded-full text-xs text-white mb-2 px-3 py-1 uppercase">Community
+                                            Service</span>
+                                        <h3 id="club-name-explore" class="mt-2 mb-2">Peer Helpers</h3>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <!-- RedCross -->
+                            <div data-tags="communication acedemic" id="club-container"
+                                class="bg-blue-100 rounded-xl shadow-lg overflow-hidden w-full h-fit mt-2 mb-2 mx-auto bg-opacity-30 border border-gray-300 transition duration-300 hover:shadow-2xl">
+                                <a href="clubs/RedCross.html">
+                                    <div class="relative">
+                                        <img class="h-52 w-full object-cover"
+                                            src="https://lawgic.info/wp-content/uploads/2016/09/Flag_of_the_Red_Cross.svg_.png"
+                                            alt="Club Image">
+                                    </div>
+                                    <div class="flex flex-col items-start p-5 bg-opacity-20">
+                                        <span
+                                            class="bg-teal-600 rounded-full text-xs text-white mb-2 px-3 py-1 uppercase">Health</span>
+                                        <h3 id="club-name-explore" class="mt-2 mb-2">Red Cross</h3>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <!-- Inter School and Christian Fellowship Club -->
+                            <div data-tags="communication acedemic" id="club-container"
+                                class="bg-blue-100 rounded-xl shadow-lg overflow-hidden w-full h-fit mt-2 mb-2 mx-auto bg-opacity-30 border border-gray-300 transition duration-300 hover:shadow-2xl">
+                                <a href="clubs/ISCCF.html">
+                                    <div class="relative">
+                                        <img class="h-52 w-full object-cover"
+                                            src="https://img.freepik.com/free-photo/spirituality-religion-women-religious-concepts-hands-praying-god-while-holding-cross-symbol-nun-caught-cross-his-hand_1150-14895.jpg?t=st=1711481969~exp=1711485569~hmac=efa536e17618fdf1b12f55d9d283aef4644d300b1bc66e660e0ae3598efe6128&w=900"
+                                            alt="Club Image">
+                                    </div>
+                                    <div class="flex flex-col items-start p-5 bg-opacity-20">
+                                        <span
+                                            class="bg-purple-900 rounded-full text-xs text-white mb-2 px-3 py-1 uppercase">Religious</span>
+                                        <h3 id="club-name-explore" class="mt-2 mb-2">Inter School and Christian Fellowship Club</h3>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <!-- Inter School and Christian Fellowship Club -->
+                            <div data-tags="communication acedemic" id="club-container"
+                                class="bg-blue-100 rounded-xl shadow-lg overflow-hidden w-full h-fit mt-2 mb-2 mx-auto bg-opacity-30 border border-gray-300 transition duration-300 hover:shadow-2xl">
+                                <a href="clubs/ISCCF.html">
+                                    <div class="relative">
+                                        <img class="h-52 w-full object-cover"
+                                            src="https://img.freepik.com/free-photo/spirituality-religion-women-religious-concepts-hands-praying-god-while-holding-cross-symbol-nun-caught-cross-his-hand_1150-14895.jpg?t=st=1711481969~exp=1711485569~hmac=efa536e17618fdf1b12f55d9d283aef4644d300b1bc66e660e0ae3598efe6128&w=900"
+                                            alt="Club Image">
+                                    </div>
+                                    <div class="flex flex-col items-start p-5 bg-opacity-20">
+                                        <span
+                                            class="bg-purple-900 rounded-full text-xs text-white mb-2 px-3 py-1 uppercase">Religious</span>
+                                        <h3 id="club-name-explore" class="mt-2 mb-2">Inter School and Christian Fellowship Club</h3>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <!-- Environmental Club -->
+                            <div data-tags="communication acedemic" id="club-container"
+                                class="bg-blue-100 rounded-xl shadow-lg overflow-hidden w-full h-fit mt-2 mb-2 mx-auto bg-opacity-30 border border-gray-300 transition duration-300 hover:shadow-2xl">
+                                <a href="clubs/EnvironmentalClub.html">
+                                    <div class="relative">
+                                        <img class="h-52 w-full object-cover"
+                                            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTU_Hdsqqs-1O-kGHiYlypMYqLAlo0yyrQsm8eCDy8bC8nV9pgS"
+                                            alt="Club Image">
+                                    </div>
+                                    <div class="flex flex-col items-start p-5 bg-opacity-20">
+                                        <span
+                                            class="bg-orange-500 rounded-full text-xs text-white mb-2 px-3 py-1 uppercase">Science</span>
+                                        <span
+                                            class="bg-green-300 rounded-full text-xs text-white mb-2 px-3 py-1 uppercase">Community
+                                            Service</span>
+                                        <h3 id="club-name-explore" class="mt-2 mb-2">Environmental Club</h3>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <!-- French Club -->
+                            <div data-tags="communication acedemic" id="club-container"
+                                class="bg-blue-100 rounded-xl shadow-lg overflow-hidden w-full h-fit mt-2 mb-2 mx-auto bg-opacity-30 border border-gray-300 transition duration-300 hover:shadow-2xl">
+                                <a href="clubs/FrenchClub.html">
+                                    <div class="relative">
+                                        <img class="h-52 w-full object-cover"
+                                            src="https://cdn.pixabay.com/photo/2016/03/22/16/02/france-1273150_1280.jpg"
+                                            alt="Club Image">
+                                    </div>
+                                    <div class="flex flex-col items-start p-5 bg-opacity-20">
+                                        <span
+                                            class="bg-yellow-400 rounded-full text-xs text-white mb-2 px-3 py-1 uppercase">Language</span>
+                                        <span
+                                            class="bg-purple-900 rounded-full text-xs text-white mb-2 px-3 py-1 uppercase">Communication</span>
+                                        <span
+                                            class="bg-red-800 rounded-full text-xs text-white mb-2 px-3 py-1 uppercase">Cultural</span>
+                                        <h3 id="club-name-explore" class="mt-2 mb-2">French Club</h3>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <!-- Spanish Club -->
+                            <div data-tags="communication acedemic" id="club-container"
+                                class="bg-blue-100 rounded-xl shadow-lg overflow-hidden w-full h-fit mt-2 mb-2 mx-auto bg-opacity-30 border border-gray-300 transition duration-300 hover:shadow-2xl">
+                                <a href="clubs/SpanishClub.html">
+                                    <div class="relative">
+                                        <img class="h-52 w-full object-cover"
+                                            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoX55hn_wJIssDWec319STobs0p7RwsKpfcj-NF-nqJZkykclL"
+                                            alt="Club Image">
+                                    </div>
+                                    <div class="flex flex-col items-start p-5 bg-opacity-20">
+                                        <span
+                                            class="bg-yellow-400 rounded-full text-xs text-white mb-2 px-3 py-1 uppercase">Language</span>
+                                        <span
+                                            class="bg-purple-900 rounded-full text-xs text-white mb-2 px-3 py-1 uppercase">Communication</span>
+                                        <span
+                                            class="bg-red-800 rounded-full text-xs text-white mb-2 px-3 py-1 uppercase">Cultural</span>
+                                        <h3 id="club-name-explore" class="mt-2 mb-2">Spanish Club</h3>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <!-- Creole Club -->
+                            <div data-tags="communication acedemic" id="club-container"
+                                class="bg-blue-100 rounded-xl shadow-lg overflow-hidden w-full h-fit mt-2 mb-2 mx-auto bg-opacity-30 border border-gray-300 transition duration-300 hover:shadow-2xl">
+                                <a href="clubs/CreoleClub.html">
+                                    <div class="relative">
+                                        <img class="h-52 w-full object-cover"
+                                            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoX55hn_wJIssDWec319STobs0p7RwsKpfcj-NF-nqJZkykclL"
+                                            alt="Club Image">
+                                    </div>
+                                    <div class="flex flex-col items-start p-5 bg-opacity-20">
+                                        <span
+                                            class="bg-red-800 rounded-full text-xs text-white mb-2 px-3 py-1 uppercase">Cultural</span>
+                                        <span
+                                            class="bg-cyan-400 rounded-full text-xs text-white mb-2 px-3 py-1 uppercase">Art</span>
+                                        <span
+                                            class="bg-yellow-400 rounded-full text-xs text-white mb-2 px-3 py-1 uppercase">Language</span>
+                                        <h3 id="club-name-explore" class="mt-2 mb-2">Creole Club</h3>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <!-- Student Volunteer Club -->
+                            <div data-tags="communication acedemic" id="club-container"
+                                class="bg-blue-100 rounded-xl shadow-lg overflow-hidden w-full h-fit mt-2 mb-2 mx-auto bg-opacity-30 border border-gray-300 transition duration-300 hover:shadow-2xl">
+                                <a href="clubs/StudentVolunteers.html">
+                                    <div class="relative">
+                                        <img class="h-52 w-full object-cover"
+                                            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTEO87Wf4_tE4kqlIogZ6IVYlGNimbFg2IShlrKdrXmZr4F0p5P"
+                                            alt="Club Image">
+                                    </div>
+                                    <div class="flex flex-col items-start p-5 bg-opacity-20">
+                                        <span
+                                            class="bg-green-200 rounded-full text-xs text-white mb-2 px-3 py-1 uppercase">Community
+                                            Service</span>
+                                        <span
+                                            class="bg-teal-600 rounded-full text-xs text-white mb-2 px-3 py-1 uppercase">Humanitarian</span>
+                                        <h3 id="club-name-explore" class="mt-2 mb-2">Creole Club</h3>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <!-- Graphic Design Student Association Club -->
+                            <div data-tags="communication acedemic" id="club-container"
+                                class="bg-blue-100 rounded-xl shadow-lg overflow-hidden w-full h-fit mt-2 mb-2 mx-auto bg-opacity-30 border border-gray-300 transition duration-300 hover:shadow-2xl">
+                                <a href="clubs/GraphicDesign.html">
+                                    <div class="relative">
+                                        <img class="h-52 w-full object-cover"
+                                            src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcTyioFAMPF0cntAtftE7NJrS2ggNNhuqADmL_0DH_VmzPCpkF9L"
+                                            alt="Club Image">
+                                    </div>
+                                    <div class="flex flex-col items-start p-5 bg-opacity-20">
+                                        <span
+                                            class="bg-cyan-400 rounded-full text-xs text-white mb-2 px-3 py-1 uppercase">Art</span>
+                                        <span
+                                            class="bg-green-200 rounded-full text-xs text-white mb-2 px-3 py-1 uppercase">Tech</span>
+                                        <h3 id="club-name-explore" class="mt-2 mb-2">Graphic Design Student Association (GDSA)</h3>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <!-- Animal Welfare Club -->
+                            <div data-tags="communication acedemic" id="club-container"
+                                class="bg-blue-100 rounded-xl shadow-lg overflow-hidden w-full h-fit mt-2 mb-2 mx-auto bg-opacity-30 border border-gray-300 transition duration-300 hover:shadow-2xl">
+                                <a href="clubs/AnimalWelfare.html">
+                                    <div class="relative">
+                                        <img class="h-52 w-full object-cover"
+                                            src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcS4k6W3rzP5c10uh9mPk3EicJFeYu72aq_zr-YC6kDUkBP3YryQ"
+                                            alt="Club Image">
+                                    </div>
+                                    <div class="flex flex-col items-start p-5 bg-opacity-20">
+                                        <span
+                                            class="bg-teal-600 rounded-full text-xs text-white mb-2 px-3 py-1 uppercase">Humanitarian</span>
+                                        <span
+                                            class="bg-green-200 rounded-full text-xs text-white mb-2 px-3 py-1 uppercase">Community
+                                            Service</span>
+                                        <span
+                                            class="bg-orange-500 rounded-full text-xs text-white mb-2 px-3 py-1 uppercase">Science</span>
+                                        <h3 id="club-name-explore" class="mt-2 mb-2">Animal Welfare Club</h3>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <!-- Tech Innovators -->
+                            <div data-tags="communication acedemic" id="club-container"
+                                class="bg-blue-100 rounded-xl shadow-lg overflow-hidden w-full h-fit mt-2 mb-2 mx-auto bg-opacity-30 border border-gray-300 transition duration-300 hover:shadow-2xl">
+                                <a href="clubs/TechInnovators.html">
+                                    <div class="relative">
+                                        <img class="h-52 w-full object-cover"
+                                            src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTv-oTspGv3x-Be0yEDizAtUr1tJqRiALcWSBVxGC-tJAgUePhX"
+                                            alt="Club Image">
+                                    </div>
+                                    <div class="flex flex-col items-start p-5 bg-opacity-20">
+                                        <span
+                                            class="bg-green-200 rounded-full text-xs text-white mb-2 px-3 py-1 uppercase">Tech</span>
+                                        <span
+                                            class="bg-orange-500 rounded-full text-xs text-white mb-2 px-3 py-1 uppercase">Humanitarian</span>
+                                        <h3 id="club-name-explore" class="mt-2 mb-2">Tech Innovators</h3>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <!-- Career Development Club -->
+                            <div data-tags="communication acedemic" id="club-container"
+                                class="bg-blue-100 rounded-xl shadow-lg overflow-hidden w-full h-fit mt-2 mb-2 mx-auto bg-opacity-30 border border-gray-300 transition duration-300 hover:shadow-2xl">
+                                <a href="clubs/CareerDevelopment.html">
+                                    <div class="relative">
+                                        <img class="h-52 w-full object-cover"
+                                            src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcS1fTx2SqbHt7tbrdH68vyj8pl2p8u1VhbQHnPw7PH-6BMXUkiX"
+                                            alt="Club Image">
+                                    </div>
+                                    <div class="flex flex-col items-start p-5 bg-opacity-20">
+                                        <span
+                                            class="bg-teal-600 rounded-full text-xs text-white mb-2 px-3 py-1 uppercase">Academic</span>
+                                        <span
+                                            class="bg-purple-900 rounded-full text-xs text-white mb-2 px-3 py-1 uppercase">Communication</span>
+                                        <h3 id="club-name-explore" class="mt-2 mb-2">Career Development Club</h3>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <!-- Marketing Society -->
+                            <div data-tags="communication acedemic" id="club-container"
+                                class="bg-blue-100 rounded-xl shadow-lg overflow-hidden w-full h-fit mt-2 mb-2 mx-auto bg-opacity-30 border border-gray-300 transition duration-300 hover:shadow-2xl">
+                                <a href="clubs/MarketingSociety.html">
+                                    <div class="relative">
+                                        <img class="h-52 w-full object-cover"
+                                            src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQ2Jskev2DzvtObdS_0buKdfx01-QzQz92g9JJmIalvIdCgMBIM"
+                                            alt="Club Image">
+                                    </div>
+                                    <div class="flex flex-col items-start p-5 bg-opacity-20">
+                                        <span
+                                            class="bg-purple-900 rounded-full text-xs text-white mb-2 px-3 py-1 uppercase">Communication</span>
+                                        <h3 id="club-name-explore" class="mt-2 mb-2">Marketing Society</h3>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <!-- Photography Club -->
+                            <div data-tags="communication acedemic" id="club-container"
+                                class="bg-blue-100 rounded-xl shadow-lg overflow-hidden w-full h-fit mt-2 mb-2 mx-auto bg-opacity-30 border border-gray-300 transition duration-300 hover:shadow-2xl">
+                                <a href="clubs/Photography.html">
+                                    <div class="relative">
+                                        <img class="h-52 w-full object-cover"
+                                            src="https://img.freepik.com/free-photo/high-angle-photo-camera-indoors-still-life_23-2150630966.jpg?t=st=1711482310~exp=1711485910~hmac=19ea2a879c481a2e4f6f52d338f8db125d947f8af295b02ddb8e344d836cf9fc&w=900"
+                                            alt="Club Image">
+                                    </div>
+                                    <div class="flex flex-col items-start p-5 bg-opacity-20">
+                                        <span
+                                            class="bg-teal-600 rounded-full text-xs text-white mb-2 px-3 py-1 uppercase">Art</span>
+                                        <h3 id="club-name-explore" class="mt-2 mb-2">Photography Club</h3>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <!-- Journalism Society -->
+                            <div data-tags="communication acedemic" id="club-container"
+                                class="bg-blue-100 rounded-xl shadow-lg overflow-hidden w-full h-fit mt-2 mb-2 mx-auto bg-opacity-30 border border-gray-300 transition duration-300 hover:shadow-2xl">
+                                <a href="clubs/JournalismSociety.html">
+                                    <div class="relative">
+                                        <img class="h-52 w-full object-cover"
+                                            src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcSh63ko5pMSOh5VwaxrK0d9Oc0TbBOA6WFwzk8ehAFvFmC903-U"
+                                            alt="Club Image">
+                                    </div>
+                                    <div class="flex flex-col items-start p-5 bg-opacity-20">
+                                        <span
+                                            class="bg-teal-600 rounded-full text-xs text-white mb-2 px-3 py-1 uppercase">Communication</span>
+                                        <h3 id="club-name-explore" class="mt-2 mb-2">Journalism Society</h3>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <!-- History -->
+                            <div data-tags="communication acedemic" id="club-container"
+                                class="bg-blue-100 rounded-xl shadow-lg overflow-hidden w-full h-fit mt-2 mb-2 mx-auto bg-opacity-30 border border-gray-300 transition duration-300 hover:shadow-2xl">
+                                <a href="clubs/HistoryClub.html">
+                                    <div class="relative">
+                                        <img class="h-52 w-full object-cover"
+                                            src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQrXTbb_MmEuembb5swUEHzbzllYUdO5slIL-H1LtYGZeDXdI9R"
+                                            alt="Club Image">
+                                    </div>
+                                    <div class="flex flex-col items-start p-5 bg-opacity-20">
+                                        <span
+                                            class="bg-orange-500 rounded-full text-xs text-white mb-2 px-3 py-1 uppercase">Science</span>
+                                        <span
+                                            class="bg-teal-600 rounded-full text-xs text-white mb-2 px-3 py-1 uppercase">Academic</span>
+                                        <h3 id="club-name-explore" class="mt-2 mb-2">History Club</h3>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <!-- Music Association -->
+                            <div data-tags="communication acedemic" id="club-container"
+                                class="bg-blue-100 rounded-xl shadow-lg overflow-hidden w-full h-fit mt-2 mb-2 mx-auto bg-opacity-30 border border-gray-300 transition duration-300 hover:shadow-2xl">
+                                <a href="clubs/MusicAssociation.html">
+                                    <div class="relative">
+                                        <img class="h-52 w-full object-cover"
+                                            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSPtcVx81W_FgKQV1lfisCHMRA6STn1sDN6HN6JS9e_Yl5LIyX-"
+                                            alt="Club Image">
+                                    </div>
+                                    <div class="flex flex-col items-start p-5 bg-opacity-20">
+                                        <span
+                                            class="bg-cyan-400 rounded-full text-xs text-white mb-2 px-3 py-1 uppercase">Art</span>
+                                        <h3 id="club-name-explore" class="mt-2 mb-2">Music Association</h3>
+                                    </div>
+                                </a>
+                            </div>
+
+
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </main>
+
+        <footer class="bg-gray-300 pt-4 w-full">
+
+            <!-- Nav Bar link icons -->
+            <div class="flex flex-col py-2 items-center text-2xl text-blue-900" id="footer-nav-bar">
+                <ul class="flex gap-8">
+                    <li><a href=""><i class="fa-solid fa-envelope hover:text-blue-700"></i></a></li>
+                    <li><a href=""><i class="fa-brands fa-instagram hover:text-blue-700"></i></a></li>
+                    <li><a href=""><i class="fa-brands fa-whatsapp hover:text-blue-700"></i></a></li>
+                    <li><a href=""><i class="fa-brands fa-facebook hover:text-blue-700"></i></a></li>
+                    <li><a href=""><i class="fa-brands fa-youtube hover:text-blue-700"></i></a></li>
+                </ul>
+
+            </div>
+
+            <!-- Nav Bar link pages -->
+            <div class="flex flex-col py-2 items-center text-gray-600">
+                <ul class="flex gap-12">
+                    <li><a href="" class="hover:text-black">About Us</a></li>
+                    <li><a href="" class="hover:text-black">Contact Us</a></li>
+                    <li><a href="" class="hover:text-black">Privacy Policy</a></li>
+                </ul>
+            </div>
+
+
+            <div class="flex flex-col items-center text-center py-2 text-blue-900 bg-gray-400">
+                <p>Copyright &copy;2024; All rights reserved.</p>
+                <p> Designed by <span class="designer">Kdi Dornelly & Valus Joseph</span></p>
+            </div>
+        </footer>
+
+    </div>
+
+</body>
+
+<script src="./script.js"></script>
+</html>
