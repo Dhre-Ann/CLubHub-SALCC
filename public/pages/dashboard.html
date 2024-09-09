@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ClubHub - Home</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Courgette&family=Gurajada&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../../src/output.css">
+</head>
+
+<body class="bg-gray-100 font-sans text-gray-900">
+
+    <header class="bg-gray-300 flex flex-col items-center w-full">
+
+        <!-- Tech Proj Label -->
+        <div class="bg-purple-300 top-0 left-0 w-full flex items-center justify-between px-10 py-2">
+            <p class="text-blue-900 text-center">Kdi Dornelly & Valus Joseph</p>
+            <P class="text-blue-900 text-center">Technical Project</P>
+        </div>
+
+        <!-- Club Hub Name -->
+        <div class="relative w-full flex items-center justify-center h-2">
+            <a href="#"
+                class="text-3xl font-bold text-blue-900 absolute top-8 left-16 inline-block object-cover object-center rounded-full cursor-pointer">Club
+                Hub</a>
+        </div>
+
+        <!-- Main Nav Bar -->
+        <div class="w-full max-w-6xl flex items-center justify-between py-4 px-10 z-3">
+
+            <ul class="flex gap-16 items-center mx-auto">
+
+                <div class="flex flex-col items-center">
+                    <li><a href="index.html" class="text-blue-900 text-2xl transition hover:text-blue-700"><i
+                                class="fa-solid fa-home"></i></a></li>
+                    <a href="../../index.html" class="text-blue-900 font-bold transition hover:text-blue-700">
+                        <p>Home</p>
+                    </a>
+                </div>
+
+                <div class="flex flex-col items-center">
+                    <li><a href="explore.html" class="text-blue-900 text-2xl transition hover:text-blue-700"><i
+                                class="fa-solid fa-magnifying-glass"></i></a></li>
+                    <a href="explore.html" class="text-blue-900 font-bold transition hover:text-blue-700">
+                        <p>Explore</p>
+                    </a>
+                </div>
+
+                <div class="flex flex-col items-center">
+                    <li><a href="forums.html" class="text-blue-900 text-2xl transition hover:text-blue-700"><i
+                                class="fa-solid fa-photo-film"></i></a></li>
+                    <a href="forums.html" class="text-blue-900 font-bold transition hover:text-blue-700">
+                        <p>Forums</p>
+                    </a>
+                </div>
+
+                <div class="flex flex-col items-center">
+                    <li><a href="#" class="text-blue-900 text-2xl transition hover:text-blue-700"><i
+                                class="fa-solid fa-users-rectangle"></i></a></li>
+                    <a href="#" class="text-blue-900 font-bold transition hover:text-blue-700">
+                        <p>Dashboard</p>
+                    </a>
+                </div>
+
+            </ul>
+
+        </div>
+
+        <!-- Login Btn -->
+        <div class="relative w-full flex items-center justify-center h-2">
+            <button
+                class="bg-blue-900 text-white py-2 px-6 border-2 border-gray-400 rounded-full font-bold transition hover:scale-105 hover:bg-gray-400 hover:text-blue-900 absolute bottom-7 right-16 inline-block object-cover object-center rounded-full cursor-pointer">LOGIN</button>
+        </div>
+
+        <!-- Hamburger Bars to toggle Nav -->
+        <div class="hidden text-blue-900 text-xl cursor-pointer">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+
+        <!-- Drop down nav bar -->
+        <div
+            class="hidden bg-gray-400 py-6 px-3 absolute right-12 top-36 w-64 rounded-2xl z-10 transition-height duration-200 ease-in-out">
+            <ul class="space-y-4 px-6 py-6">
+                <li><a href="../../index.html" class="text-white text-xl transition hover:text-blue-900">Home</a></li>
+                <li><a href="#" class="text-white text-xl transition hover:text-blue-900">Explore</a>
+                </li>
+                <li><a href="forums.html" class="text-white text-xl transition hover:text-blue-900">Forums</a></li>
+                <li><a href="dashboard.html" class="text-white text-xl transition hover:text-blue-900">Dashboard</a>
+                </li>
+            </ul>
+            <button
+                class="bg-blue-900 text-white py-2 w-3/5 mx-auto flex justify-center items-center rounded-full transition hover:scale-105 hover:bg-blue-100 hover:border-blue-900">LOGIN</button>
+        </div>
+
+    </header>
+
+    <main class="w-full">
+        <div class="flex items-center text-center justify-center">
+            <!-- Banner -->
+            <div class="w-full bg-cover bg-center max-h-96"
+                style="height:32rem; background-image: url(https://images.pexels.com/photos/6147363/pexels-photo-6147363.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);">
+                <div class="flex items-center justify-center h-full w-full bg-gray-900 bg-opacity-50">
+                </div>
+            </div>
+
+            <!-- Overlay div -->
+            <div class="absolute top-36 w-full bg-black bg-cover bg-center opacity-60 h-96"></div>
+
+            <!-- Banner Text -->
+            <div class="absolute w-2/5 px-10 py-16 text-center w-fit shadow-2xl flex flex-col gap-4">
+                <h1 class="text-white text-6xl font-semibold">Dashboard</h1>
+                <h2 class="text-white text-2xl font-semibold">Everything You Need, All In One Place!</h2>
+            </div>
+
+        </div>
+
+
+        <!-- Greeting segment -->
+
+        <div class="p-6">
+            <div class="bg-gray-800 text-white p-4 rounded-lg flex justify-between items-center mb-6">
+                <div class="flex items-center space-x-4">
+                    <img id="profile-pic" src="" class="w-16 h-16 rounded-full">
+                    <h2 id="username" class="text-2xl font-bold">Hello User</h2>
+                </div>
+                <p class="text-lg font-semibold">Welcome to Club Hub!</p>
+            </div>
+        </div>
+
+
+
+
+        <div class="flex gap-8 w-full px-3 py-5">
+            <div class="w-2/3 flex-2 bg-gray-800 text-white p-4 rounded-lg shadow-lg">
+                <div class="bg-blue-900 p-4 rounded-t-lg text-center text-xl font-bold">
+                    Your Clubs
+                </div>
+                <div class="flex w-full gap-4 mt-4">
+                    <!-- Club Items Here -->
+                     <div class="border-cyan-400 border-2 py-4 px-2 w-1/3"><h2>My Sample Club 1</h2></div>
+                     <div class="border-cyan-400 border-2 py-4 px-2 w-1/3"><h2>My Sample Club 2</h2></div>
+                     <div class="border-cyan-400 border-2 py-4 px-2 w-1/3"><h2>My Sample Club 3</h2></div>
+                </div>
+            </div>
+
+            <div class="w-1/3 flex-1 bg-gray-800 text-white p-4 rounded-lg shadow-lg">
+                <div class="bg-blue-900 p-4 rounded-t-lg text-center text-xl font-bold">
+                    Notice Board
+                </div>
+                <div class="p-4">
+                    <div class="relative bg-white rounded-lg text-gray-900">
+                        <div class="flex flex-col h-full">
+                            <div class="flex justify-between items-center p-4 bg-gray-100 border-b">
+                                <i class="fa fa-angle-left text-blue-900 cursor-pointer"></i>
+                                <div class="text-lg font-semibold">March 2024</div>
+                                <i class="fa fa-angle-right text-blue-900 cursor-pointer"></i>
+                            </div>
+                            <div class="p-4 flex flex-col">
+                                <div class="flex justify-between py-2 font-semibold text-blue-900">
+                                    <div>Sun</div>
+                                    <div>Mon</div>
+                                    <div>Tue</div>
+                                    <div>Wed</div>
+                                    <div>Thu</div>
+                                    <div>Fri</div>
+                                    <div>Sat</div>
+                                </div>
+                                <div class="grid grid-cols-7 gap-1">
+                                    <!-- Calendar Days Here -->
+                                </div>
+                                <div class="flex justify-between items-center mt-4 border-t pt-4">
+                                    <div class="flex items-center border rounded-lg overflow-hidden">
+                                        <input type="text" placeholder="mm/yyyy" class="p-2 border-none text-blue-900">
+                                        <button class="bg-blue-900 text-white p-2 border-l border-blue-900">GO</button>
+                                    </div>
+                                    <button class="bg-blue-900 text-white p-2 rounded">Today</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-4">
+                        <div class="flex items-center justify-center">
+                            <button class="bg-blue-900 text-white p-2 rounded-full shadow-lg">
+                                <i class="fa fa-plus"></i>
+                            </button>
+                        </div>
+                        <div class="mt-4">
+                            <div class="bg-white text-gray-900 p-4 rounded-lg shadow-lg">
+                                <div class="text-lg font-semibold border-b pb-2 mb-2">
+                                    Add Event
+                                    <i class="fa fa-times float-right cursor-pointer"></i>
+                                </div>
+                                <input type="text" placeholder="Event Name" class="w-full p-2 mb-2 border rounded">
+                                <input type="text" placeholder="Event Time From" class="w-full p-2 mb-2 border rounded">
+                                <input type="text" placeholder="Event Time To" class="w-full p-2 mb-2 border rounded">
+                                <button class="bg-blue-900 text-white p-2 rounded">Add Event</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </main>
+
+
+
+
+
+
+
+
+    <footer class="bg-gray-300 pt-4 w-full">
+
+        <!-- Nav Bar link icons -->
+        <div class="flex flex-col py-2 items-center text-2xl text-blue-900" id="footer-nav-bar">
+            <ul class="flex gap-8">
+                <li><a href=""><i class="fa-solid fa-envelope hover:text-blue-700"></i></a></li>
+                <li><a href=""><i class="fa-brands fa-instagram hover:text-blue-700"></i></a></li>
+                <li><a href=""><i class="fa-brands fa-whatsapp hover:text-blue-700"></i></a></li>
+                <li><a href=""><i class="fa-brands fa-facebook hover:text-blue-700"></i></a></li>
+                <li><a href=""><i class="fa-brands fa-youtube hover:text-blue-700"></i></a></li>
+            </ul>
+
+        </div>
+
+        <!-- Nav Bar link pages -->
+        <div class="flex flex-col py-2 items-center text-gray-600">
+            <ul class="flex gap-12">
+                <li><a href="" class="hover:text-black">About Us</a></li>
+                <li><a href="" class="hover:text-black">Contact Us</a></li>
+                <li><a href="" class="hover:text-black">Privacy Policy</a></li>
+            </ul>
+        </div>
+
+
+        <div class="flex flex-col items-center text-center py-2 text-blue-900 bg-gray-400">
+            <p>Copyright &copy;2024; All rights reserved.</p>
+            <p> Designed by <span class="designer">Kdi Dornelly & Valus Joseph</span></p>
+        </div>
+    </footer>
+
+</body>
+
+</html>
