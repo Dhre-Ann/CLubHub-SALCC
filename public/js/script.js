@@ -4,18 +4,21 @@ document.addEventListener("DOMContentLoaded", () => {
     const clubNameInput = document.getElementById('search-club-name');
     const clubs = document.querySelectorAll('[data-tags]');
 
-    clubNameInput.addEventListener('input', () => {
-        const filter = clubNameInput.value.toLowerCase();
-        clubs.forEach(club => {
-            const clubName = club.querySelector('h3').textContent.toLowerCase();
-            console.log("clubname: ", clubName);
-            if (clubName.includes(filter)) {
-                club.style.display = '';
-            } else {
-                club.style.display = 'none';
-            }
+    if (clubNameInput){
+        clubNameInput.addEventListener('input', () => {
+            const filter = clubNameInput.value.toLowerCase();
+            clubs.forEach(club => {
+                const clubName = club.querySelector('h3').textContent.toLowerCase();
+                console.log("clubname: ", clubName);
+                if (clubName.includes(filter)) {
+                    club.style.display = '';
+                } else {
+                    club.style.display = 'none';
+                }
+            });
         });
-    });
+    }
+    
 
     
     // const clubNameInput = document.getElementById('search-club-name');
@@ -64,9 +67,12 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     // Show tags container on input focus
-    tagInput.addEventListener('focus', () => {
-        tagsContainer.classList.remove('hidden');
-    });
+    if (tagInput){
+        tagInput.addEventListener('focus', () => {
+            tagsContainer.classList.remove('hidden');
+        });
+    }
+    
 
     function filterClubsByTag(selectedTag) {
         clubs.forEach(club => {

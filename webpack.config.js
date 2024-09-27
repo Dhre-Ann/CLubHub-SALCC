@@ -3,7 +3,7 @@ const path = require('path');
 module.exports = {
     mode: 'development',
     entry: [
-        './public/js/script.js'
+        './public/js/script.js','./public/js/firebaseConfig.js','./public/js/login.js'
     ],
     output: {
         path: path.resolve(__dirname, 'dist'),
