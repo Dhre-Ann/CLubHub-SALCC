@@ -1,5 +1,5 @@
 import { initializeApp } from 'firebase/app'
-import { getFirestore, doc, getDoc, getAggregateFromServer } from 'firebase/firestore';
+import { getFirestore } from 'firebase/firestore';
 
 const firebaseConfig = ({ 
     apiKey: "AIzaSyBaDzmjsCa4XfuCV8xYLAAnFfvvf1ToCfY",
@@ -11,33 +11,33 @@ const firebaseConfig = ({
  });
 
 export const firebaseApp = initializeApp(firebaseConfig);
-const database = getFirestore(firebaseApp);
+export const database = getFirestore(firebaseApp);
 
 
 
 // Test function
 
-async function hello() {
-        //variables
-        let emailInfo;
-        //get document
-        const docRef = doc(database, "Clubs", "AnimalWelfare");
-        const docSnap = await getDoc(docRef);
-        if (docSnap.exists) {
-            // store info
-            const data = docSnap.data();
-            const name = data.name;
+// async function hello() {
+//         //variables
+//         let emailInfo;
+//         //get document
+//         const docRef = doc(database, "Clubs", "AnimalWelfare");
+//         const docSnap = await getDoc(docRef);
+//         if (docSnap.exists) {
+//             // store info
+//             const data = docSnap.data();
+//             const name = data.name;
             
-            console.log("Hello", name);
+//             console.log("Hello", name);
     
             
     
-        } else {
-            console.log("This category does not exist");
-        }
-        return;
-    }
-    hello();
+//         } else {
+//             console.log("This category does not exist");
+//         }
+//         return;
+//     }
+//     hello();
 
 
 

@@ -56,15 +56,18 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     // Create tag elements
-    tags.forEach(tag => {
-        const tagElement = document.createElement('div');
-        tagElement.classList.add('p-1', 'text-gray-700', 'font-medium', 'cursor-pointer', 'hover:bg-gray-200', 'rounded');
-        tagElement.textContent = tag;
-        tagElement.addEventListener('click', () => {
-            filterClubsByTag(tag.toLowerCase());
+    if(tags){
+        tags.forEach(tag => {
+            const tagElement = document.createElement('div');
+            tagElement.classList.add('p-1', 'text-gray-700', 'font-medium', 'cursor-pointer', 'hover:bg-gray-200', 'rounded');
+            tagElement.textContent = tag;
+            tagElement.addEventListener('click', () => {
+                filterClubsByTag(tag.toLowerCase());
+            });
+            tagsContainer.appendChild(tagElement);
         });
-        tagsContainer.appendChild(tagElement);
-    });
+    }
+    
 
     // Show tags container on input focus
     if (tagInput){
@@ -87,8 +90,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Hide tag dropdown when clicking outside
     document.addEventListener('click', (e) => {
-        if (!tagInput.contains(e.target) && !tagsContainer.contains(e.target)) {
-            tagsContainer.classList.add('hidden');
+        if(tagInput && tagsContainer){
+            if (!tagInput.contains(e.target) && !tagsContainer.contains(e.target)) {
+                tagsContainer.classList.add('hidden');
+            } 
         }
+        
     });
 });

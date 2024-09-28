@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="../../src/output.css">
 </head>
 
-<body class="bg-gray-100 font-sans text-gray-900">
+<body id="dashboard-home" class="bg-gray-100 font-sans text-gray-900">
 
     <header class="bg-gray-300 flex flex-col items-center w-full">
 
@@ -74,10 +74,10 @@
 
         </div>
 
-        <!-- Login Btn -->
+        <!-- Login/Logout Btn -->
         <div class="relative w-full flex items-center justify-center h-2">
-            <button
-                class="bg-blue-900 text-white py-2 px-6 border-2 border-gray-400 rounded-full font-bold transition hover:scale-105 hover:bg-gray-400 hover:text-blue-900 absolute bottom-7 right-16 inline-block object-cover object-center rounded-full cursor-pointer">LOGIN</button>
+            <button id="login-logout-btn"
+                class="in bg-blue-900 text-white py-2 px-6 border-2 border-gray-400 rounded-full font-bold transition hover:scale-105 hover:bg-gray-400 hover:text-blue-900 absolute bottom-7 right-16 inline-block object-cover object-center rounded-full cursor-pointer">LOGIN</button>
         </div>
 
         <!-- Hamburger Bars to toggle Nav -->
@@ -96,8 +96,9 @@
                 <li><a href="#" class="text-white text-xl transition hover:text-blue-900">Dashboard</a>
                 </li>
             </ul>
-            <button
-                class="bg-blue-900 text-white py-2 w-3/5 mx-auto flex justify-center items-center rounded-full transition hover:scale-105 hover:bg-blue-100 hover:border-blue-900">LOGIN</button>
+            <!-- Login/logout btn -->
+            <button id="login-logout-btn-dropdown-menu"
+                class="in bg-blue-900 text-white py-2 w-3/5 mx-auto flex justify-center items-center rounded-full transition hover:scale-105 hover:bg-blue-100 hover:border-blue-900">LOGIN</button>
         </div>
 
     </header>
@@ -137,18 +138,31 @@
 
 
 
-
         <div class="flex gap-8 w-full px-3 py-5">
             <div class="w-2/3 flex-2 bg-gray-800 text-white p-4 rounded-lg shadow-lg">
                 <div class="bg-blue-900 p-4 rounded-t-lg text-center text-xl font-bold">
                     Your Clubs
                 </div>
-                <div class="flex w-full gap-4 mt-4">
-                    <!-- Club Items Here -->
-                     <div class="border-cyan-400 border-2 py-4 px-2 w-1/3"><h2>My Sample Club 1</h2></div>
-                     <div class="border-cyan-400 border-2 py-4 px-2 w-1/3"><h2>My Sample Club 2</h2></div>
-                     <div class="border-cyan-400 border-2 py-4 px-2 w-1/3"><h2>My Sample Club 3</h2></div>
+
+                <!-- Container for clubs -->
+                <div id="dashboard-my-clubs" class="py-8 grid gap-8 grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+
+
+                    <!-- <div id="clubDocId" class="potato w-full min-h-1/2 border-2 border-solid border-gray-400 shadow-lg p-5 text-center rounded-md" >
+                        <h2 class="p-3 font-medium">My Sample Club 1</h2>
+                        <img alt="club image" src="../images/animalwelfare_img.jpg" class="relative mx-auto my-auto w-11/12 rounded-xl">
+                        <p class="py-7">Here is the club's description</p>
+                        
+                        <div id="dashboard-clubs-buttons" class="items-center justify-center text-center flex gap-4">
+                            <button id="goToManageBtn" type="button" class="px-2 py-1 rounded-md text-white bg-[rgb(20,20,66)] border-solid border-2 border-[rgb(20,20,66)]">View More</button>
+                            <button id="leaveClubBtn" type="button" class="px-2 py-1 rounded-md text-white bg-[rgb(87,22,22)] border-solid border-2 border-[rgb(87,22,22)]">Leave Club</button>
+                        </div>
+                    
+                    </div> -->
+
+
                 </div>
+               
             </div>
 
             <div class="w-1/3 flex-1 bg-gray-800 text-white p-4 rounded-lg shadow-lg">
@@ -250,5 +264,7 @@
     </footer>
 
 </body>
+
+<script src="../../dist/bundle.js"></script>
 
 </html>

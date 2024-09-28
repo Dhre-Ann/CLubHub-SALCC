@@ -1,0 +1,12 @@
+specVersion: "v1beta"
+serviceId: "CLubHub-SALCC"
+location: "us-central1"
+schema:
+  source: "./schema"
+  datasource:
+    postgresql:
+      database: "fdcdb"
+      cloudSql:
+        instanceId: "CLubHub-SALCC-fdc"
+      # schemaValidation: "COMPATIBLE"
+connectorDirs: ["./connector"]
