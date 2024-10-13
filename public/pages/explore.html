@@ -37,9 +37,9 @@
             </div>
 
             <!-- Main Nav Bar -->
-            <div class="w-full max-w-6xl flex items-center justify-between py-4 px-10 z-3">
+            <div class="w-full max-w-6xl flex items-center justify-between py-12 md:py-4 px-10 z-3">
 
-                <ul class="flex gap-16 items-center mx-auto">
+                <ul class="flex gap-16 items-center mx-auto hidden md:flex">
 
                     <div class="flex flex-col items-center">
                         <li><a href="index.html" class="text-blue-900 text-2xl transition hover:text-blue-700"><i
@@ -78,18 +78,18 @@
             </div>
 
             <!-- Login Btn -->
-            <div class="relative w-full flex items-center justify-center h-2">
-                <button
-                    class="bg-blue-900 text-white py-2 px-6 border-2 border-gray-400 rounded-full font-bold transition hover:scale-105 hover:bg-gray-400 hover:text-blue-900 absolute bottom-7 right-16 inline-block object-cover object-center rounded-full cursor-pointer">LOGIN</button>
+            <div class="relative w-full flex items-center justify-center h-2 hidden md:flex">
+                <button id="login-logout-btn"
+                    class="in bg-blue-900 text-white py-2 px-6 border-2 border-gray-400 rounded-full font-bold transition hover:scale-105 hover:bg-gray-400 hover:text-blue-900 absolute bottom-7 right-16 inline-block object-cover object-center rounded-full cursor-pointer">LOGIN</button>
             </div>
 
             <!-- Hamburger Bars to toggle Nav -->
-            <div class="hidden text-blue-900 text-xl cursor-pointer">
-                <i class="fa-solid fa-bars"></i>
+            <div id="toggle-nav-bar" class="absolute right-12 top-20 md:hidden text-blue-900 text-xl cursor-pointer">
+                <i id="toggle-nav-bar-i" class="fa-solid fa-bars"></i>
             </div>
 
             <!-- Drop down nav bar -->
-            <div
+            <div id="nav-bar-dropdown-menu"
                 class="hidden bg-gray-400 py-6 px-3 absolute right-12 top-36 w-64 rounded-2xl z-10 transition-height duration-200 ease-in-out">
                 <ul class="space-y-4 px-6 py-6">
                     <li><a href="../../index.html" class="text-white text-xl transition hover:text-blue-900">Home</a></li>
@@ -99,8 +99,8 @@
                     <li><a href="dashboard.html" class="text-white text-xl transition hover:text-blue-900">Dashboard</a>
                     </li>
                 </ul>
-                <button
-                    class="bg-blue-900 text-white py-2 w-3/5 mx-auto flex justify-center items-center rounded-full transition hover:scale-105 hover:bg-blue-100 hover:border-blue-900">LOGIN</button>
+                <button id="login-logout-btn-dropdown-menu"
+                    class="in bg-blue-900 text-white py-2 w-3/5 mx-auto flex justify-center items-center rounded-full transition hover:scale-105 hover:bg-blue-100 hover:border-blue-900">LOGIN</button>
             </div>
 
         </header>

@@ -14,6 +14,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Courgette&family=Gurajada&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="../../src/output.css">
+    <link rel="stylesheet" href="../../src/custom.css">
 </head>
 
 <body id="dashboard-home" class="bg-gray-100 font-sans text-gray-900">
@@ -34,9 +35,9 @@
         </div>
 
         <!-- Main Nav Bar -->
-        <div class="w-full max-w-6xl flex items-center justify-between py-4 px-10 z-3">
+        <div class="w-full max-w-6xl flex items-center justify-between py-12 md:py-4 px-10 z-3">
 
-            <ul class="flex gap-16 items-center mx-auto">
+            <ul class="flex gap-16 items-center mx-auto hidden md:flex">
 
                 <div class="flex flex-col items-center">
                     <li><a href="index.html" class="text-blue-900 text-2xl transition hover:text-blue-700"><i
@@ -75,18 +76,18 @@
         </div>
 
         <!-- Login/Logout Btn -->
-        <div class="relative w-full flex items-center justify-center h-2">
+        <div class="relative w-full flex items-center justify-center h-2 hidden md:flex">
             <button id="login-logout-btn"
                 class="in bg-blue-900 text-white py-2 px-6 border-2 border-gray-400 rounded-full font-bold transition hover:scale-105 hover:bg-gray-400 hover:text-blue-900 absolute bottom-7 right-16 inline-block object-cover object-center rounded-full cursor-pointer">LOGIN</button>
         </div>
 
         <!-- Hamburger Bars to toggle Nav -->
-        <div class="hidden text-blue-900 text-xl cursor-pointer">
-            <i class="fa-solid fa-bars"></i>
+        <div id="toggle-nav-bar" class="absolute right-12 top-20 md:hidden text-blue-900 text-xl cursor-pointer">
+            <i id="toggle-nav-bar-i" class="fa-solid fa-bars"></i>
         </div>
 
         <!-- Drop down nav bar -->
-        <div
+        <div id="nav-bar-dropdown-menu"
             class="hidden bg-gray-400 py-6 px-3 absolute right-12 top-36 w-64 rounded-2xl z-10 transition-height duration-200 ease-in-out">
             <ul class="space-y-4 px-6 py-6">
                 <li><a href="../../index.html" class="text-white text-xl transition hover:text-blue-900">Home</a></li>
@@ -169,58 +170,99 @@
                 <div class="bg-blue-900 p-4 rounded-t-lg text-center text-xl font-bold">
                     Notice Board
                 </div>
-                <div class="p-4">
-                    <div class="relative bg-white rounded-lg text-gray-900">
-                        <div class="flex flex-col h-full">
-                            <div class="flex justify-between items-center p-4 bg-gray-100 border-b">
-                                <i class="fa fa-angle-left text-blue-900 cursor-pointer"></i>
-                                <div class="text-lg font-semibold">March 2024</div>
-                                <i class="fa fa-angle-right text-blue-900 cursor-pointer"></i>
-                            </div>
-                            <div class="p-4 flex flex-col">
-                                <div class="flex justify-between py-2 font-semibold text-blue-900">
-                                    <div>Sun</div>
-                                    <div>Mon</div>
-                                    <div>Tue</div>
-                                    <div>Wed</div>
-                                    <div>Thu</div>
-                                    <div>Fri</div>
-                                    <div>Sat</div>
-                                </div>
-                                <div class="grid grid-cols-7 gap-1">
-                                    <!-- Calendar Days Here -->
-                                </div>
-                                <div class="flex justify-between items-center mt-4 border-t pt-4">
-                                    <div class="flex items-center border rounded-lg overflow-hidden">
-                                        <input type="text" placeholder="mm/yyyy" class="p-2 border-none text-blue-900">
-                                        <button class="bg-blue-900 text-white p-2 border-l border-blue-900">GO</button>
-                                    </div>
-                                    <button class="bg-blue-900 text-white p-2 rounded">Today</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
 
-                    <div class="mt-4">
-                        <div class="flex items-center justify-center">
-                            <button class="bg-blue-900 text-white p-2 rounded-full shadow-lg">
-                                <i class="fa fa-plus"></i>
-                            </button>
-                        </div>
-                        <div class="mt-4">
-                            <div class="bg-white text-gray-900 p-4 rounded-lg shadow-lg">
-                                <div class="text-lg font-semibold border-b pb-2 mb-2">
-                                    Add Event
-                                    <i class="fa fa-times float-right cursor-pointer"></i>
+
+                <div id="dashboard-notice-column-space" class="p-5">
+                    
+                    <div class="calendar-container">
+                        <div class="calendar-only">
+                            <div class="calendar-right">
+                                <div class="dashboard-my-calendar">
+                                    <div class="calendar-month">
+                                        <i class="fa fa-angle-left prev"></i>
+                                        <div class="calendar-date"></div>
+                                        <i class="fa fa-angle-right next"></i>
+                                    </div>
+                                    <div class="calendar-weekdays">
+                                        <div>sun</div>
+                                        <div>mon</div>
+                                        <div>tue</div>
+                                        <div>wed</div>
+                                        <div>thu</div>
+                                        <div>fri</div>
+                                        <div>sat</div>
+                                    </div>
+
+                                    <div class="calendar-days">
+
+                                    </div>
+
+                                    <div class="go-to-today">
+                                        <div class="go-to">
+                                            <input type="text" placeholder="mm/yyyy" class="calendar-date-input">
+                                            <button class="go-to-btn">GO</button>
+                                        </div>
+                                        <button class="go-to-today-btn">Today</button>
+                                    </div>
+
+
                                 </div>
-                                <input type="text" placeholder="Event Name" class="w-full p-2 mb-2 border rounded">
-                                <input type="text" placeholder="Event Time From" class="w-full p-2 mb-2 border rounded">
-                                <input type="text" placeholder="Event Time To" class="w-full p-2 mb-2 border rounded">
-                                <button class="bg-blue-900 text-white p-2 rounded">Add Event</button>
                             </div>
                         </div>
+
+                        <div class="responsive-right-side">
+                            <div class="right-calendar">
+                                <div class="today-date">
+                                    <div class="event-day">Wed</div>
+                                    <div class="event-date">16 November 2022</div>
+                                </div>
+                                <div class="calendar-events">
+
+                                </div>
+                            </div>
+
+                            <div class="events-container">
+                                <div class="add-event-wrapper ">
+
+                                    <div class="add-event-header">
+                                        <div class="title">Add Event</div>
+                                        <i class="fas fa-times close"></i>
+                                    </div>
+
+                                    <div class="add-event-body">
+
+                                        <div class="add-event-input">
+                                            <input type="text" placeholder="Event Name" class="event-name">
+                                        </div>
+
+                                        <div class="add-event-input">
+                                            <input type="text" placeholder="Event Time From" class="event-time-from">
+                                        </div>
+
+                                        <div class="add-event-input">
+                                            <input type="text" placeholder="Event Time To" class="event-time-to">
+                                        </div>
+
+                                    </div>
+
+                                    <div class="add-event-footer">
+                                        <button class="add-event-btn">Add Event</button>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="plus-btn-only">
+                                <button title="temp" class="add-event">
+                                    <i class="fas fa-plus"></i>
+                                </button>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
+
+
             </div>
         </div>
         </div>

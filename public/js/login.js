@@ -7,10 +7,10 @@ export const auth = getAuth(firebaseApp);
 const provider = new GoogleAuthProvider();
 
 // Declaring user variables
-let user;
-let userEmail;
-let userDispName;
-let userPic;
+export let user;
+export let userEmail;
+export let userDispName;
+export let userPic;
 export let username;
 
 //sign in with google
@@ -126,6 +126,143 @@ async function createUserDoc(user) {
     }
 }
 
+// S E S S I O N S   S P E C I F I C A T I O N S
+
+// Function to set the expiry timestamp in the user's session after 1 minute to test 
+function setSessionExpiry() {
+    const expiryTimestamp = Date.now() + (120 * 1000); // 1 minute to test
+    // const expiryTimestamp = Date.now() + (60 * 60 * 1000); // Current timestamp + 1 hour
+    localStorage.setItem('expiryTimestamp', expiryTimestamp);
+}
+
+// Function to check if the session has expired
+function checkSessionExpiry() {
+    const expiryTimestamp = localStorage.getItem('expiryTimestamp');
+    if (expiryTimestamp) {
+        const now = Date.now();
+        const oneMinuteBeforeExpiry = parseInt(expiryTimestamp, 10) - (60 * 1000);
+        // If session will expire in 1 minute
+        if (now >= oneMinuteBeforeExpiry && now < parseInt(expiryTimestamp, 10)) {
+            // Show extend session confirmation
+            showSessionExpiryAlert();
+        } else if (now >= parseInt(expiryTimestamp, 10)) {
+            // Session has expired, logging the user out
+            console.log("Sign out function called from check session expiry function");
+            signOutFunction();
+        }
+    }
+}
+
+// Function to show session expiry alert with real-time countdown
+function showSessionExpiryAlert() {
+    // Function to create and append session popup HTML elements
+    function createSessionPopup() {
+        // Create session popup elements
+        const sessionPopupDiv = document.createElement('div');
+        sessionPopupDiv.setAttribute('id','session-popup');
+        sessionPopupDiv.setAttribute('class','fixed mx-auto my-auto z-50 w-1/3 min-h-52 max-h-fit top-0 bottom-0 left-0 right-0 p-12 bg-[rgb(14,14,36)] text-white rounded-3xl border-2 border-white border-solid shadow-lg text-center justify-center');
+        
+        const sessionPopupTextDiv = document.createElement('div');
+        sessionPopupTextDiv.setAttribute('id','session-popup-text');
+        sessionPopupTextDiv.setAttribute('class','relative flex flex-wrap text-white font-medium text-lg text-center');
+        sessionPopupTextDiv.innerHTML = `
+            <p class="relative float-start">Your session will expire in <span id="num-seconds" class="relative">--</span> seconds. Do you want to extend your session time?</p>
+        `;
+
+        const sessionPopupButtonsDiv = document.createElement('div');
+        sessionPopupButtonsDiv.setAttribute('id','session-popup-buttons');
+        sessionPopupButtonsDiv.setAttribute('class','relative gap-4 flex text-center items-center justify-center mx-auto my-auto w-full p-2 transform');
+        sessionPopupButtonsDiv.innerHTML = `
+            <button type="button" id="confirm-session-extension" class="text-center px-2 min-w-16 bg-[#fff] border-none font-semibold text-[rgb(14,14,36)] rounded-lg hover:border-2 hover:border-solid hover:border-white hover:text-[#fff] hover:bg-[rgb(14,14,36)] transform transition-colors transition-opacity">Ok</button>
+            <button type="button" id="cancel-session-extension" class="text-center px-2 min-w-16 bg-[#fff] border-none font-semibold text-[rgb(14,14,36)] rounded-lg hover:border-2 hover:border-solid hover:border-white hover:text-[#fff] hover:bg-[rgb(14,14,36)] transform transition-colors transition-opacity ">Cancel</button>
+        `;
+
+        // Append session popup elements to body
+        sessionPopupDiv.appendChild(sessionPopupTextDiv);
+        sessionPopupDiv.appendChild(sessionPopupButtonsDiv);
+
+        // Create session popup overlay
+        const sessionPopupOverlayDiv = document.createElement('div');
+        sessionPopupOverlayDiv.setAttribute('id','session-popup-overlay');
+        sessionPopupOverlayDiv.setAttribute('class','fixed top-0 left-0 w-full h-full bg-[rgba(0,0,0,0.8)] z-40');
+        sessionPopupOverlayDiv.addEventListener('click', function (event) {
+            // Prevent click events from propagating to underlying elements
+            event.stopPropagation();
+        });
+
+        // Append session popup and overlay to body
+        document.body.appendChild(sessionPopupOverlayDiv);
+        document.body.appendChild(sessionPopupDiv);
+
+        // Add event listeners to OK and Cancel buttons
+        const confirmButton = sessionPopupDiv.querySelector('#confirm-session-extension');
+        const cancelButton = sessionPopupDiv.querySelector('#cancel-session-extension');
+
+        confirmButton.addEventListener('click', function () {
+            // Refresh the user's session time
+            setSessionExpiry();
+
+            // Remove session popup and overlay from the DOM
+            document.body.removeChild(sessionPopupDiv);
+            document.body.removeChild(sessionPopupOverlayDiv);
+
+            // Restart the countdown timer
+            updateCountdownDisplay();
+        });
+
+
+
+        cancelButton.addEventListener('click', function () {
+            // Log out the user
+            console.log("Sign out function called from show session expiry");
+            signOutFunction();
+        });
+    }
+
+    // Function to update countdown display
+    function updateCountdownDisplay() {
+        // Calculate remaining time in milliseconds
+        const expiryTimestamp = parseInt(localStorage.getItem('expiryTimestamp'), 10);
+        const now = Date.now();
+        let remainingTime = Math.max(0, expiryTimestamp - now);
+
+        // Show session popup and overlay only when remaining time falls below one minute
+        if (remainingTime <= 60 * 1000) {
+            // Create and append session popup HTML elements if not already created
+            if (!document.querySelector('#session-popup')) {
+                createSessionPopup();
+            }
+
+            // Update countdown display
+            const numSecondsElement = document.querySelector('#num-seconds');
+            if (numSecondsElement) {
+                const seconds = Math.floor(remainingTime / 1000);
+                numSecondsElement.textContent = seconds;
+            }
+
+            // Show session popup and overlay
+            document.querySelector('#session-popup').style.display = 'block';
+            document.querySelector('#session-popup-overlay').style.display = 'block';
+        }
+
+        // Update remaining time every second
+        setTimeout(updateCountdownDisplay, 1000);
+
+        // If time runs out, hide session popup and overlay
+        if (remainingTime <= 0) {
+            document.querySelector('#session-popup').style.display = 'none';
+            document.querySelector('#session-popup-overlay').style.display = 'none';
+            console.log("Sign out function called from update countdownn display");
+            signOutFunction();
+        }
+    }
+
+    // Initial call to update countdown display
+    updateCountdownDisplay();
+}
+
+// Check session expiry every 1 minute
+setInterval(checkSessionExpiry, 60 * 1000);
 
 
 
@@ -204,12 +341,6 @@ function signOutFunctionSub() {
 }
 
 
-
-
-
-
-
-
 // Function that changes button when user attempts to login
 function changeLogoutToLogin(){
     console.log("There is no user here! From the function to try to change button to login");
@@ -225,7 +356,7 @@ function changeLogoutToLogin(){
         signInBtn.innerHTML = `LOGIN`;
         signInBtn.addEventListener("click", ()=>{
             console.log("Sign in button clicked, log in");
-            window.location.replace('/public/index.html');
+            window.location.replace('/public/auth/login.html');
         });
     }
     const signInBtn2 = document.querySelector("#login-logout-btn");
@@ -241,6 +372,7 @@ function changeLogoutToLogin(){
         signInBtn2.addEventListener("click", ()=>{
             console.log("Sign in button clicked, log in");
             window.location.replace('../auth/login.html');
+            // window.location.replace('/public/auth/login.html');
         });
     }
 }
@@ -368,42 +500,16 @@ const signInBtn = document.querySelector(".in");
 if (signInBtn){
     signInBtn.addEventListener('click', ()=> {
         console.log("Redirecting to login");
-        window.location.replace('../auth/login.html');
+        window.location.replace('/public/auth/login.html');
     });
 }
 const nestedSignInBtn = document.querySelector(".in-sub");
 if (nestedSignInBtn){
     nestedSignInBtn.addEventListener('click', ()=> {
         console.log("Redirecting to login");
-        window.location.replace('../../auth/login.html');
+        window.location.replace('/public/auth/login.html');
     });
 }
-
-
-
-// Function to get club displayname from database
-export async function getClubName(clubName) {
-    const docRef = doc(database, "Clubs", clubName);
-    const docSnap = await getDoc(docRef);
-    if (docSnap.exists()) {
-        //store status
-        const clubDisplayName = docSnap.data().name;
-        console.log("Club name: " + clubDisplayName);
-        return clubDisplayName;
-    } else {
-        console.log("Document does not exist");
-    }
-}
-
-export function storeClubName(clubName) {
-    sessionStorage.setItem('clubName', clubName);
-}
-
-// Function to retrieve club name from sessionStorage
-export function getStoredClubName() {
-    return sessionStorage.getItem('clubName');
-}
-
 
 
 //Update dashboard on dom
@@ -524,7 +630,7 @@ document.addEventListener('DOMContentLoaded', async function () {
             sessionStorage.setItem('targetUrl', targetUrl);
 
             //Redirect to login
-            window.location.href = "../login.html";
+            window.location.href = "../auth/login.html";
         }          
     }
 
@@ -541,7 +647,7 @@ document.addEventListener('DOMContentLoaded', async function () {
             sessionStorage.setItem('targetUrl', targetUrl);
 
             //Redirect to login
-            window.location.href = "../login.html";
+            window.location.href = "../auth/login.html";
         }
     }
 
@@ -551,3 +657,110 @@ document.addEventListener('DOMContentLoaded', async function () {
         link.addEventListener('click', handleRedirectLinkClickMainSub);
     });
 });
+
+
+
+// Export Functions
+
+// Function to get club displayname from database
+export async function getClubName(clubName) {
+    const docRef = doc(database, "Clubs", clubName);
+    const docSnap = await getDoc(docRef);
+    if (docSnap.exists()) {
+        //store status
+        const clubDisplayName = docSnap.data().name;
+        console.log("Club name: " + clubDisplayName);
+        return clubDisplayName;
+    } else {
+        console.log("Document does not exist");
+    }
+}
+
+export function storeClubName(clubName) {
+    sessionStorage.setItem('clubName', clubName);
+}
+
+// Function to retrieve club name from sessionStorage
+export function getStoredClubName() {
+    return sessionStorage.getItem('clubName');
+}
+
+
+// Other functions
+async function getExecutiveMembers(clubName) {
+    console.log("Get executive members function called");
+    const executivesRef = collection(database, "Clubs", clubName, "Executives");
+    const querySnapshot = await getDocs(executivesRef);
+
+    const executiveMembers = [];
+
+    querySnapshot.forEach(async (doc) => {
+        const positionId = doc.id;
+        const positionData = doc.data();
+
+        // Skip the uid field
+        if (positionId !== 'uid') {
+            const studentRef = positionData.student;
+
+            // Get student data using the reference
+            const studentSnap = await getDoc(studentRef);
+            if (studentSnap.exists()) {
+                const studentData = studentSnap.data();
+                // Extract relevant student information
+                const displayName = studentData.displayName;
+                const displayPic = studentData.displayPic;
+
+                // Push the executive member's data to the array
+                executiveMembers.push({
+                    displayName: displayName,
+                    displayPic: displayPic,
+                    position: positionId // Assuming positionId is the position name
+                });                
+            }
+        }
+    });
+
+    console.log("Executive Members: ", executiveMembers);
+    return executiveMembers;
+}
+
+console.log('testing1');
+await getExecutiveMembers("AnimalWelfare");
+console.log('testing2');
+
+function getClubNameFromURL() {
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+    return urlParams.get('clubName');
+}
+
+// Define the sendEmail function
+export async function sendNewEmail(subject, messageBody, recipientEmail) {
+    const emailData = {
+        subject: subject,
+        html: messageBody,
+        recipient: recipientEmail
+    };
+
+    if (emailData) {
+        try {
+            const response = await fetch('http://localhost:4000/send-email', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(emailData) // Correct JSON formatting here
+            });
+
+            if (response.ok) {
+                console.log('Email sent successfully');
+            } else {
+                console.error('Failed to send email:', response.statusText);
+            }
+        } catch (error) {
+            console.error('Error sending email:', error);
+        }
+    } else {
+        console.error('Email data is invalid.');
+    }
+}
