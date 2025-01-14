@@ -1,3 +1,17 @@
+/* Club backgrounds */
+
+.Debate {
+    background-image: url('https://images.pexels.com/photos/1756665/pexels-photo-1756665.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+}
+
+
+
+/* Login page background image */
+
+#loginbkg {
+    background-image: url('/public/images/image.png');
+}
+
 /* Dashboard Calendar CSS */
 .calendar-container * {
     font-family: "Poppins", sans-serif;
@@ -325,7 +339,7 @@
     .calendar-container .responsive-right-side {
         width: 100%;
     }
-    
+
 }
 
 @media(max-width: 740px) {
@@ -628,3 +642,613 @@
     padding: 0;
     overflow: hidden;
 }
+
+
+
+
+
+/*Club Page faq*/
+
+.faq-head {
+    margin-bottom: 50px;
+}
+
+.faqAccordion .faqAccordion-item {
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.faqAccordion button {
+    position: relative;
+    display: block;
+    text-align: left;
+    width: 100%;
+    padding: 1em 0;
+    color: #7288a2;
+    font-size: 1.15rem;
+    font-weight: 400;
+    border: none;
+    background: none;
+    outline: none;
+}
+
+.faqAccordion button:hover,
+.faqAccordion button:focus {
+    cursor: pointer;
+    color: #03b5d2;
+}
+
+.faqAccordion .faqAccordion-title {
+    padding: 1em 1.5em 1em 0;
+}
+
+.faqAccordion .icon {
+    display: inline-block;
+    position: absolute;
+    top: 18px;
+    right: 0;
+    width: 22px;
+    height: 22px;
+    border: 1px solid;
+    border-radius: 22px;
+}
+
+.faqAccordion .icon::before {
+    display: block;
+    position: absolute;
+    content: '';
+    top: 9px;
+    left: 5px;
+    width: 10px;
+    height: 2px;
+    background: currentColor;
+}
+
+.faqAccordion .icon::after {
+    display: block;
+    position: absolute;
+    content: '';
+    top: 5px;
+    left: 9px;
+    width: 2px;
+    height: 10px;
+    background: currentColor;
+}
+
+.faqAccordion .faqAccordion-content {
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: opacity 200ms linear, max-height 200ms linear;
+    will-change: opacity, max-height;
+}
+
+.faqAccordion button[aria-expanded='true'] {
+    color: #03b5d2;
+}
+
+.faqAccordion button[aria-expanded='true']+.faqAccordion-content {
+    opacity: 1;
+    max-height: 9em;
+    transition: all 200ms linear;
+    will-change: opacity, max-height;
+}
+
+.faqAccordion-content p {
+    font-size: 1rem;
+    font-weight: 300;
+    margin: 2em 0;
+}
+
+/* Style the gallery */
+.gallery-container {
+    padding: 20px;
+    margin-top: 40px;
+    column-count: 3;
+    column-gap: 15px;
+}
+
+.gallery-item {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: auto;
+}
+
+.gallery-item img:hover {
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+}
+
+/* The registrationModal */
+.registrationModal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    overflow-y: scroll;
+}
+
+/* registrationModal Content/Box */
+.registrationModal-content {
+    background-color: #fefefe;
+    margin: 10% auto;
+    /* Center the registrationModal vertically */
+    padding: 20px;
+    border-radius: 8px;
+    width: 90%;
+    /* 90% of the width of the viewport */
+    max-width: 700px;
+    /* Maximum width for the registrationModal */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    /* Add shadow to the registrationModal */
+}
+
+/* Close-registrationodal Button */
+.close-registratioModal {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close-registratioModal:hover,
+.close-registratioModal:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap');
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+.registration-card {
+    margin: 2rem auto;
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    background-color: #FFF;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px 0 rgba(153, 153, 153, 0.25);
+    padding: 0.75rem;
+    max-width: 600px;
+    /* Adjust the width here */
+}
+
+.registration-card-image {
+    border-radius: 8px;
+    overflow: hidden;
+    position: relative;
+    padding-bottom: 56.25%;
+    /* 16:9 aspect ratio */
+}
+
+.registration-card-image::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('https://cdni.iconscout.com/illustration/premium/thumb/people-fill-out-admission-form-7546389-6166010.png?f=webp');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.registration-card-heading {
+    position: absolute;
+    left: 10%;
+    top: 15%;
+    right: 10%;
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: #000000;
+    line-height: 1.222;
+    z-index: 4;
+    background-color: #eee;
+    padding: 10px;
+}
+
+
+.registration-card-heading small {
+    display: block;
+    font-size: 0.75em;
+    font-weight: 400;
+    margin-top: 0.25em;
+}
+
+.registration-card-form {
+    padding: 2rem 1rem 0;
+}
+
+.registration-input {
+    display: flex;
+    flex-direction: column-reverse;
+    position: relative;
+    padding-top: 1.5rem;
+}
+
+.registration-input+.registration-input {
+    margin-top: 1.5rem;
+}
+
+.registration-input-label {
+    color: #8597a3;
+    position: absolute;
+    top: 1.5rem;
+    bottom: 2rem;
+    transition: 0.25s ease;
+}
+
+.registration-input-field {
+    border: 0;
+    z-index: 1;
+    background-color: transparent;
+    border-bottom: 2px solid #eee;
+    font: inherit;
+    font-size: 1.125rem;
+    padding: 0.25rem 0;
+    top: 2rem;
+    resize: none;
+}
+
+
+.registration-input-field option {
+    padding: 3px;
+    background-color: #6658d3;
+    color: rgb(20, 20, 66);
+    font-weight: 500;
+}
+
+.registration-input-field option:hover {
+    background-color: rgb(14, 14, 36);
+    color: white;
+}
+
+.registration-input-field:focus,
+.registration-input-field:valid {
+    outline: 0;
+    border-bottom-color: #6658d3;
+}
+
+.registration-input-field:focus+.registration-input-label,
+.registration-input-field:valid+.registration-input-label {
+    color: #6658d3;
+    transform: translateY(-1.5rem);
+}
+
+
+.registration-action {
+    margin-top: 2rem;
+    display: flex;
+}
+
+.registration-action-button {
+    font: inherit;
+    font-size: 1.25rem;
+    padding: 1em;
+    width: 100%;
+    font-weight: 500;
+    background-color: #6658d3;
+    border-radius: 6px;
+    color: #FFF;
+    border: 0;
+    margin: 5px;
+}
+
+.registration-action-button:focus {
+    outline: 0;
+}
+
+.registration-card-info {
+    padding: 1rem;
+    text-align: center;
+    font-size: 0.875rem;
+    color: #8597a3;
+}
+
+.registration-card-info a {
+    display: block;
+    color: #6658d3;
+    text-decoration: none;
+}
+
+/* Style the modal */
+.club-gallery-modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.club-gallery-modal-content {
+    position: relative;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 0;
+    max-width: 800px;
+    width: 90%;
+    text-align: center;
+}
+
+.prev,
+.next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -50px;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    transition: 0.6s ease;
+    border-radius: 3px;
+    user-select: none;
+    -webkit-user-select: none;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+
+.prev {
+    left: 0;
+}
+
+
+.next {
+    right: 0;
+}
+
+.club-gallery-close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+}
+
+.gallery-slides img {
+    max-width: 100%;
+    height: 40%;
+}
+
+.stay-in-touch {
+    margin-bottom: 30px;
+    margin-left: 70%;
+}
+
+@media screen and (max-width: 768px) {
+    .gallery-item {
+        width: calc(50% - 20px);
+        /* Two images per row */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .gallery-item {
+        width: calc(100% - 20px);
+        /* One image per row */
+    }
+}
+
+
+
+
+
+/* CSS FOR GENERAL PAGE */
+.member-gen,
+.exec-gen{
+    width: 100%;
+    display: flex;
+    padding: 20px;
+    padding-top: 60px;
+    justify-content: space-evenly;
+}
+
+.broadcast-content-container{
+    display: flex;
+    max-height: 450px;
+}
+
+.acceptance-status,
+.rejected-application{
+    width: 30%;
+    height: 150px;
+    border-radius: 25px;
+    box-shadow: 2px 2px 10px black;
+}
+.broadcast-section{
+    width: 30%;
+    min-height: 150px;
+    border-radius: 25px;
+    box-shadow: 2px 2px 10px black;
+}
+.accepted-application{
+    width: 70%;
+    border-radius: 25px;
+    box-shadow: 2px 2px 10px black;
+}
+.application-section{
+    width: 65%;
+    border-radius: 25px;
+    box-shadow: 2px 2px 10px black;
+}
+.acceptance-status-label,
+.application-form-label,
+.rejected-application-label,
+.club-members-label,
+.broadcast-section-label,
+.applications-label{
+    background-color: rgba(10, 10, 122, 0.253);
+    padding: 15px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px 20px 0 0;
+}
+
+.acceptance-status-label h2,
+.application-form-label h2,
+.rejected-application-label h2,
+.club-members-label h2,
+.broadcast-section-label h2,
+.applications-label h2{
+    font-size: 25px;
+    text-align: center;
+    color: black;
+}
+
+.acceptance-status-status,
+.rejected-application-content{
+    margin: auto;
+    font-size: 1.2rem;
+    font-weight: 600;
+    opacity: 0.5;
+    line-height: 2rem;
+    font-family: 'Google Sans', Roboto, Arial, sans-serif; 
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+/* APPLICATION FORM TABLE */
+
+/* scrollable table */
+.colleagues-content{
+    height: 350px;
+    width: 600px;
+    overflow-y: auto;
+    scroll-snap-type: y mandatory;
+    margin: auto;
+}
+
+.applications-content{
+    height: 450px;
+    width: 90%;
+    overflow-y: auto;
+    scroll-snap-type: y mandatory;
+    margin: auto;
+}
+
+.user-application-form{
+    width: 60%;
+    border-radius: 25px;
+    box-shadow: 2px 2px 10px black;
+    /* background-image: linear-gradient(rgba(10, 10, 122, 0.103), rgba(20, 20, 66, 0.507)); */
+}
+
+.application-form-content{
+    height: 350px;
+    width: 100%;
+    overflow-y: auto;
+    padding: 20px;
+    margin: auto;
+    align-items: center;
+}
+
+.application-form-content .application-form-content-table,
+.colleagues-content .colleague-table,
+.applications-content .applications-table{
+    width: 100%;
+}
+
+.application-form-content-table,
+.colleague-table{
+    border-collapse: collapse;
+    font-size: 14px;
+    width: 600px;
+}
+
+.applications-table{
+    border-collapse: collapse;
+    font-size: 13px;
+}
+
+.application-form-content-table th{
+    background-color: rgb(59, 59, 85);
+    color: #fff;
+    text-align: center;
+    /* position: sticky; */
+    top: 0;
+}
+
+.colleague-table th,
+.applications-table th {
+    background-color: rgb(59, 59, 85);
+    color: #fff;
+    text-align: center;
+    position: sticky;
+    top: 0;
+}
+
+
+.application-form-content-table th,
+.application-form-content-table td,
+.colleague-table th,
+.colleague-table td,
+.applications-table th,
+.applications-table td{
+    padding: 6px 8px;
+    font-weight: normal;
+    text-align: center;
+    font-size: 16px;
+}
+
+.application-form-content-table tr,
+.colleague-table tr,
+.applications-table tr{
+    scroll-snap-align: start;
+}
+
+/* change color for every other row */
+.colleague-table tbody tr:nth-of-type(even){
+    background-color: #f5f5f557;
+}
+
+.applications-table tbody tr:nth-of-type(even){
+    background-color: #f5f5f58e;
+}
+
+.buttons button{
+    padding: 5.5px;
+    border-radius: 8px;
+    font-size: 12.5px;
+    font-weight: normal;
+    transition: 0.2s;
+    border: none;
+    color: #000;
+}
+
+.buttons .accept-app{
+    background-color: rgb(19, 151, 19);
+}
+
+.buttons .decline-app{
+    background-color: rgb(190, 15, 15);
+}
+
+.buttons .accept-app:active,
+.buttons .decline-app:active{
+    scale: 0.93;
+    transition: 0.2s;
+}
+
+

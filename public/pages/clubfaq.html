@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ClubHub - Home</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Courgette&family=Gurajada&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../../src/output.css">
+    <link rel="stylesheet" href="../../src/custom.css">
+</head>
+
+<body class="bg-gray-300">
+
+    <div class="relative w-full">
+        <header class="bg-gray-300 flex flex-col items-center w-full">
+
+            <!-- Tech Proj Label -->
+            <div class="bg-purple-300 top-0 left-0 w-full flex items-center justify-between px-10 py-2">
+                <p class="text-blue-900 text-center">Kdi Dornelly & Valus Joseph</p>
+                <P class="text-blue-900 text-center">Technical Project</P>
+            </div>
+
+            <!-- Club Hub Name -->
+            <div class="relative w-full flex items-center justify-center h-2">
+                <a href="#"
+                    class="text-3xl font-bold text-blue-900 absolute top-8 left-16 inline-block object-cover object-center rounded-full cursor-pointer">Club
+                    Hub</a>
+            </div>
+
+            <!-- Main Nav Bar -->
+            <div class="w-full max-w-6xl flex items-center justify-between py-12 md:py-4 px-10 z-3">
+
+                <ul class="flex gap-16 items-center mx-auto hidden md:flex">
+
+                    <div class="flex flex-col items-center">
+                        <li><a href="index.html" class="text-blue-900 text-2xl transition hover:text-blue-700"><i
+                                    class="fa-solid fa-home"></i></a></li>
+                        <a href="../../index.html" class="text-blue-900 font-bold transition hover:text-blue-700">
+                            <p>Home</p>
+                        </a>
+                    </div>
+
+                    <div class="flex flex-col items-center">
+                        <li><a href="explore.html" class="text-blue-900 text-2xl transition hover:text-blue-700"><i
+                                    class="fa-solid fa-magnifying-glass"></i></a></li>
+                        <a href="explore.html" class="text-blue-900 font-bold transition hover:text-blue-700">
+                            <p>Explore</p>
+                        </a>
+                    </div>
+
+                    <div class="flex flex-col items-center">
+                        <li><a href="forums.html" class="text-blue-900 text-2xl transition hover:text-blue-700"><i
+                                    class="fa-solid fa-photo-film"></i></a></li>
+                        <a href="forums.html" class="text-blue-900 font-bold transition hover:text-blue-700">
+                            <p>Forums</p>
+                        </a>
+                    </div>
+
+                    <div class="flex flex-col items-center">
+                        <li><a href="#" class="text-blue-900 text-2xl transition hover:text-blue-700"><i
+                                    class="fa-solid fa-users-rectangle"></i></a></li>
+                        <a href="#" class="text-blue-900 font-bold transition hover:text-blue-700">
+                            <p>Dashboard</p>
+                        </a>
+                    </div>
+
+                </ul>
+
+            </div>
+
+            <!-- Login/Logout Btn -->
+            <div class="relative w-full flex items-center justify-center h-2 hidden md:flex">
+                <button id="login-logout-btn"
+                    class="in bg-blue-900 text-white py-2 px-6 border-2 border-gray-400 rounded-full font-bold transition hover:scale-105 hover:bg-gray-400 hover:text-blue-900 absolute bottom-7 right-16 inline-block object-cover object-center rounded-full cursor-pointer">LOGIN</button>
+            </div>
+
+            <!-- Hamburger Bars to toggle Nav -->
+            <div id="toggle-nav-bar" class="absolute right-12 top-20 md:hidden text-blue-900 text-xl cursor-pointer">
+                <i id="toggle-nav-bar-i" class="fa-solid fa-bars"></i>
+            </div>
+
+            <!-- Drop down nav bar -->
+            <div id="nav-bar-dropdown-menu"
+                class="hidden bg-gray-400 py-6 px-3 absolute right-12 top-36 w-64 rounded-2xl z-10 transition-height duration-200 ease-in-out">
+                <ul class="space-y-4 px-6 py-6">
+                    <li><a href="../../index.html" class="text-white text-xl transition hover:text-blue-900">Home</a>
+                    </li>
+                    <li><a href="explore.html" class="text-white text-xl transition hover:text-blue-900">Explore</a>
+                    </li>
+                    <li><a href="forums.html" class="text-white text-xl transition hover:text-blue-900">Forums</a></li>
+                    <li><a href="#" class="text-white text-xl transition hover:text-blue-900">Dashboard</a>
+                    </li>
+                </ul>
+                <!-- Login/logout btn -->
+                <button id="login-logout-btn-dropdown-menu"
+                    class="in bg-blue-900 text-white py-2 w-3/5 mx-auto flex justify-center items-center rounded-full transition hover:scale-105 hover:bg-blue-100 hover:border-blue-900">LOGIN</button>
+            </div>
+
+        </header>
+
+        <main class="w-full">
+
+            <div id="club-banner-container" class="flex items-center text-center justify-center"></div>
+
+
+            <div id="club-page-sub-nav" class="bg-[rgb(236, 236, 234)] h-14 p-10 pt-5">
+                <nav>
+                    <ul class="list-none">
+                        <li class="inline-block mr-5"><a href="./clubs/Debate.html" id="aboutClubLink" class="aboutClubLink relative no-underline text-[#333] active:text-[#00f] active:after:content-none active:after:absolute active:after:left-0 active:after:w-full active:after:bg-[blue] active:after:transition active:after:ease-linear active:after:duration-300 " style="bottom: -3px;">About Club</a></li>
+                        <li class="inline-block mr-5"><a href="clubfaq.html" id="faqLink" class="relative no-underline text-[#333] active:text-[#00f] active:after:content-none active:after:absolute active:after:left-0 active:after:w-full active:after:bg-[blue] active:after:transition active:after:ease-linear active:after:duration-300 " style="bottom: -3px;">Club FAQs</a></li>
+                        <li class="inline-block mr-5">
+                            <div id="mini-bar" class="bg-transparent m-0 relative" style="bottom: -8px">
+                                <div id="mini-bar-dropdown" class="float-left transition duration-300 hover:bg-[rbga(10,10,122,0.103)] hover:transition hover:duration-300">
+                                    <button id="mini-bar-manage-name" class="size-4 border-none outline-none text-black px-1 bg-inherit w-fit h-fit"> Manage Club
+                                        <i class="fa fa-caret-down"></i>
+                                      </button>
+                                      <div id="mini-bar-content" class="hidden absolute bg-white min-w-28 shadow-lg shadow-[rgba(0,0,0,0.2)] z-0 rounded-bl-2xl rounded-br-2xl">
+                                            <a href="general.html" id="generalLink" class="auth-required-link-main-sub float-none text-black px-2 py-2 no-underline block text-left hover:bg-[#ddd]">General</a>
+                                            <a href="vote.html" id="voteLink" class="auth-required-link-main-sub float-none text-black px-2 py-2 no-underline block text-left hover:bg-[#ddd]">Voting Station</a>
+                                      </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+
+
+            <!-- Registration modal -->
+            <div id="registrationModal" class="registrationModal">
+                <div class="registrationModal-content">
+                  <span class="close-registratioModal">&times;</span>
+                  <div class="reg-section-container">
+                    Section 1: Personal Information
+                    <div class="registration-card" id="section1">
+                      <div class="registration-card-image">
+                        <h2 class="registration-card-heading">
+                          Club Registration
+                          <small>Fill the form to apply</small>
+                        </h2>
+                      </div>
+                      <form class="registration-card-form">
+                        <div class="registration-action">
+                          <button type="button" class="registration-action-button" id="nextRegSec1">Next</button>
+                        </div>
+                      </form>
+                    </div>
+          
+                    <!-- Section 2: Academic Information -->
+                    <div class="registration-card" id="section2" style="display: none;">
+                      <div class="registration-card-image">
+                        <h2 class="registration-card-heading">
+                          Academic Information
+                        </h2>
+                      </div>
+                      <form class="registration-card-form">
+                        <div class="registration-input">
+                          <input type="text" id="major" class="registration-input-field" />
+                          <label class="registration-input-label" for="major">Major/Field of Study</label>
+                        </div>
+                        <div class="registration-input">
+                          <input type="number" id="yearOfStudy" class="registration-input-field" required />
+                          <label class="registration-input-label" for="yearOfStudy">Year of Study</label>
+                        </div>
+                        <div class="registration-action">
+                          <button type="button" class="registration-action-button" id="prevRegSec2">Previous</button>
+                          <button type="button" class="registration-action-button" id="nextRegSec2">Next</button>
+                        </div>
+                      </form>
+                    </div>
+          
+                    <!-- Section 3: Club Specific Questions -->
+                    <div class="registration-card" id="section3" style="display: none;">
+                      <div class="registration-card-image">
+                        <h2 class="registration-card-heading">
+                          Club Specific Questions
+                        </h2>
+                      </div>
+                      <form class="registration-card-form" id="submit">
+          
+                        <div class="registration-input">
+                          <textarea id="motivation" class="registration-input-field" rows="6" required></textarea>
+                          <label class="registration-input-label" for="motivation">What motivated you to join this particular
+                            club?</label>
+                        </div>
+                        <div class="registration-input">
+                          <textarea id="skills" class="registration-input-field" rows="6" required></textarea>
+                          <label class="registration-input-label" for="skills">Do you have any skills relevant to the club's
+                            activities?</label>
+                        </div>
+                        <div class="registration-input">
+                          <textarea id="expectations" class="registration-input-field" rows="6" required></textarea>
+                          <label class="registration-input-label" for="expectations">What do you hope to gain from your
+                            participation in this club?</label>
+                        </div>
+                        <div class="registration-input">
+                          <textarea id="leadershipRoles" class="registration-input-field" rows="6"></textarea>
+                          <label class="registration-input-label" for="leadershipRoles">Are you interested in taking on any
+                            leadership roles within the club?</label>
+                        </div>
+                        <div class="registration-input">
+                          <select id="availability" class="registration-input-field" required>
+                            <option value="" disabled selected></option>
+                            <option value="yes">Yes</option>
+                            <option value="no">No</option>
+                          </select>
+                          <label class="registration-input-label" for="availability">Are you available to attend club
+                            meetings/events regularly?</label>
+                        </div>
+                        <div class="registration-action">
+                          <button type="button" class="registration-action-button" id="prevRegSec3">Previous</button>
+                          <button class="registration-action-button" type="submit">Submit</button>
+                        </div>
+                      </form>
+                    </div>
+          
+                  </div>
+                </div>
+              </div>
+
+              <div id="clubpage-main-container" class="p-12 shadow-md w-11/12 h-auto mx-auto my-auto mb-7 mt-5 bg-[rgba(226, 225, 224, 0.999)] text-[#555] rounded-2xl">
+                <div class="mb-12">
+                    <h2>Frequently Asked Questions</h2>
+                </div>
+
+                <div class="faqAccordion">
+                    <div class="faqAccordion-item">
+                      <button id="faqAccordion-button-1" aria-expanded="false"><span class="faqAccordion-title">How do I join this
+                          club?</span><span class="icon" aria-hidden="true"></span></button>
+                      <div class="faqAccordion-content">
+                        <p>Look for the join club button on this page and follow the instructions that follow.</p>
+                      </div>
+                    </div>
+                    <div class="faqAccordion-item">
+                      <button id="faqAccordion-button-2" aria-expanded="false"><span class="faqAccordion-title">When will we have club
+                          meetings?</span><span class="icon" aria-hidden="true"></span></button>
+                      <div class="faqAccordion-content">
+                        <p>Club meeting dates and times will be communicated to you via this platform in the case that you get
+                          accepted</p>
+                      </div>
+                    </div>
+                    <div class="faqAccordion-item">
+                      <button id="faqAccordion-button-3" aria-expanded="false"><span class="faqAccordion-title">How long will it take
+                          for my application to be proccessed?</span><span class="icon" aria-hidden="true"></span></button>
+                      <div class="faqAccordion-content">
+                        <p>You will recieve an email regarding your application status.</p>
+                      </div>
+                    </div>
+                    <div class="faqAccordion-item">
+                      <button id="faqAccordion-button-4" aria-expanded="false"><span class="faqAccordion-title">Who decides if I am
+                          accepted?</span><span class="icon" aria-hidden="true"></span></button>
+                      <div class="faqAccordion-content">
+                        <p>The executive members of this club proccesses your application then decides if you are accepted.</p>
+                      </div>
+                    </div>      
+                  </div>
+
+              </div>
+
+        </main>
+
+
+
+
+
+    </div>
+
+    <footer class="bg-gray-300 pt-4 w-full">
+
+        <!-- Nav Bar link icons -->
+        <div class="flex flex-col py-2 items-center text-2xl text-blue-900" id="footer-nav-bar">
+            <ul class="flex gap-8">
+                <li><a href=""><i class="fa-solid fa-envelope hover:text-blue-700"></i></a></li>
+                <li><a href=""><i class="fa-brands fa-instagram hover:text-blue-700"></i></a></li>
+                <li><a href=""><i class="fa-brands fa-whatsapp hover:text-blue-700"></i></a></li>
+                <li><a href=""><i class="fa-brands fa-facebook hover:text-blue-700"></i></a></li>
+                <li><a href=""><i class="fa-brands fa-youtube hover:text-blue-700"></i></a></li>
+            </ul>
+
+        </div>
+
+        <!-- Nav Bar link pages -->
+        <div class="flex flex-col py-2 items-center text-gray-600">
+            <ul class="flex gap-12">
+                <li><a href="" class="hover:text-black">About Us</a></li>
+                <li><a href="" class="hover:text-black">Contact Us</a></li>
+                <li><a href="" class="hover:text-black">Privacy Policy</a></li>
+            </ul>
+        </div>
+
+
+        <div class="flex flex-col items-center text-center py-2 text-blue-900 bg-gray-400">
+            <p>Copyright &copy;2024; All rights reserved.</p>
+            <p> Designed by <span class="designer">Kdi Dornelly & Valus Joseph</span></p>
+        </div>
+    </footer>
+
+</body>
+
+<script src="../../dist/bundle.js"></script>
+
+<script>
+    // Get all input fields with floating labels
+const inputFields = document.querySelectorAll('.registration-input-field');
+
+// Add event listeners to each input field
+inputFields.forEach(inputField => {
+  inputField.addEventListener('input', function() {
+      // Check if the input field has content
+      if (this.value !== '') {
+          // Add a class to the label to keep it in the floating position
+          this.previousElementSibling.classList.add('floating-label');
+      } else {
+          // Remove the class if the input field is empty
+          this.previousElementSibling.classList.remove('floating-label');
+      }
+  });
+
+  // Check if the input field is pre-filled on page load
+  if (inputField.value !== '') {
+      inputField.previousElementSibling.classList.add('floating-label');
+  }
+});
+
+ // Get the current page URL
+ var currentPage = window.location.pathname;
+
+// Get the links
+// var faqLinks = document.getElementsByClassName('faqLink');
+var faqLink = document.getElementById('faqLink');
+
+// Define the Tailwind classes to keep links highlighted
+const activeTailwindClasses = "text-[#00f] content-none absolute left-0 w-full text-[blue] transition ease-linear duration-300";
+
+
+// Check if the current page is "Debate.html" for "About Club" or "clubfaq.html" for "Club FAQs"
+if (currentPage.endsWith('clubfaq.html')) {
+  faqLink.classList.add(...activeTailwindClasses.split(" "));
+}
+
+const items = document.querySelectorAll(".faqAccordion button");
+
+function togglefaqAccordion() {
+  const itemToggle = this.getAttribute('aria-expanded');
+
+  for (i = 0; i < items.length; i++) {
+    items[i].setAttribute('aria-expanded', 'false');
+  }
+
+  if (itemToggle == 'false') {
+    this.setAttribute('aria-expanded', 'true');
+  }
+}
+
+items.forEach(item => item.addEventListener('click', togglefaqAccordion));
+
+
+// Get the registrationModal element
+var registrationModal = document.getElementById("registrationModal");
+
+// Get the button that opens the registrationModal
+var btn = document.getElementsByClassName("join-club-button")[0];
+
+// Get the <span> element that close-registratioModals the registrationModal
+var span = document.getElementsByClassName("close-registratioModal")[0];
+
+// When the user clicks the button, open the registrationModal
+if (btn){
+    btn.onclick = function () {
+  registrationModal.style.display = "block";
+}
+}
+
+
+// When the user clicks on <span> (x), close-registratioModal the registrationModal
+span.onclick = function () {
+  registrationModal.style.display = "none";
+}
+
+
+// When the user clicks anywhere outside of the registrationModal, close-registrationodal it
+window.onclick = function (event) {
+  if (event.target == registrationModal) {
+    registrationModal.style.display = "none";
+  }
+}
+var currentSection = 1;
+var sectionCount = 3;
+
+function showSection(sectionNumber) {
+  for (var i = 1; i <= sectionCount; i++) {
+    var section = document.getElementById('section' + i);
+    if (section) {
+      if (i === sectionNumber) {
+        section.style.display = 'block';
+      } else {
+        section.style.display = 'none';
+      }
+    }
+  }
+  currentSection = sectionNumber;
+}
+
+document.getElementById('nextRegSec1').addEventListener('click', function () {
+  showSection(2);
+});
+
+document.getElementById('prevRegSec2').addEventListener('click', function () {
+  showSection(1);
+});
+
+document.getElementById('nextRegSec2').addEventListener('click', function () {
+  showSection(3);
+});
+
+document.getElementById('prevRegSec3').addEventListener('click', function () {
+  showSection(2);
+});
+
+</script>
+
+</html>

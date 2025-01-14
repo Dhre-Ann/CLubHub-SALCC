@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ClubHub - Home</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Courgette&family=Gurajada&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../../src/output.css">
+    <link rel="stylesheet" href="../../src/custom.css">
+</head>
+
+<body class="bg-gray-300">
+
+    <div class="relative w-full">
+        <header class="bg-gray-300 flex flex-col items-center w-full">
+
+            <!-- Tech Proj Label -->
+            <div class="bg-purple-300 top-0 left-0 w-full flex items-center justify-between px-10 py-2">
+                <p class="text-blue-900 text-center">Kdi Dornelly & Valus Joseph</p>
+                <P class="text-blue-900 text-center">Technical Project</P>
+            </div>
+
+            <!-- Club Hub Name -->
+            <div class="relative w-full flex items-center justify-center h-2">
+                <a href="#"
+                    class="text-3xl font-bold text-blue-900 absolute top-8 left-16 inline-block object-cover object-center rounded-full cursor-pointer">Club
+                    Hub</a>
+            </div>
+
+            <!-- Main Nav Bar -->
+            <div class="w-full max-w-6xl flex items-center justify-between py-12 md:py-4 px-10 z-3">
+
+                <ul class="flex gap-16 items-center mx-auto hidden md:flex">
+
+                    <div class="flex flex-col items-center">
+                        <li><a href="index.html" class="text-blue-900 text-2xl transition hover:text-blue-700"><i
+                                    class="fa-solid fa-home"></i></a></li>
+                        <a href="../../index.html" class="text-blue-900 font-bold transition hover:text-blue-700">
+                            <p>Home</p>
+                        </a>
+                    </div>
+
+                    <div class="flex flex-col items-center">
+                        <li><a href="explore.html" class="text-blue-900 text-2xl transition hover:text-blue-700"><i
+                                    class="fa-solid fa-magnifying-glass"></i></a></li>
+                        <a href="explore.html" class="text-blue-900 font-bold transition hover:text-blue-700">
+                            <p>Explore</p>
+                        </a>
+                    </div>
+
+                    <div class="flex flex-col items-center">
+                        <li><a href="forums.html" class="text-blue-900 text-2xl transition hover:text-blue-700"><i
+                                    class="fa-solid fa-photo-film"></i></a></li>
+                        <a href="forums.html" class="text-blue-900 font-bold transition hover:text-blue-700">
+                            <p>Forums</p>
+                        </a>
+                    </div>
+
+                    <div class="flex flex-col items-center">
+                        <li><a href="#" class="text-blue-900 text-2xl transition hover:text-blue-700"><i
+                                    class="fa-solid fa-users-rectangle"></i></a></li>
+                        <a href="#" class="text-blue-900 font-bold transition hover:text-blue-700">
+                            <p>Dashboard</p>
+                        </a>
+                    </div>
+
+                </ul>
+
+            </div>
+
+            <!-- Login/Logout Btn -->
+            <div class="relative w-full flex items-center justify-center h-2 hidden md:flex">
+                <button id="login-logout-btn"
+                    class="in bg-blue-900 text-white py-2 px-6 border-2 border-gray-400 rounded-full font-bold transition hover:scale-105 hover:bg-gray-400 hover:text-blue-900 absolute bottom-7 right-16 inline-block object-cover object-center rounded-full cursor-pointer">LOGIN</button>
+            </div>
+
+            <!-- Hamburger Bars to toggle Nav -->
+            <div id="toggle-nav-bar" class="absolute right-12 top-20 md:hidden text-blue-900 text-xl cursor-pointer">
+                <i id="toggle-nav-bar-i" class="fa-solid fa-bars"></i>
+            </div>
+
+            <!-- Drop down nav bar -->
+            <div id="nav-bar-dropdown-menu"
+                class="hidden bg-gray-400 py-6 px-3 absolute right-12 top-36 w-64 rounded-2xl z-10 transition-height duration-200 ease-in-out">
+                <ul class="space-y-4 px-6 py-6">
+                    <li><a href="../../index.html" class="text-white text-xl transition hover:text-blue-900">Home</a>
+                    </li>
+                    <li><a href="explore.html" class="text-white text-xl transition hover:text-blue-900">Explore</a>
+                    </li>
+                    <li><a href="forums.html" class="text-white text-xl transition hover:text-blue-900">Forums</a></li>
+                    <li><a href="#" class="text-white text-xl transition hover:text-blue-900">Dashboard</a>
+                    </li>
+                </ul>
+                <!-- Login/logout btn -->
+                <button id="login-logout-btn-dropdown-menu"
+                    class="in bg-blue-900 text-white py-2 w-3/5 mx-auto flex justify-center items-center rounded-full transition hover:scale-105 hover:bg-blue-100 hover:border-blue-900">LOGIN</button>
+            </div>
+
+        </header>
+
+        <main class="w-full">
+
+            <div id="club-banner-container" class="flex items-center text-center justify-center"></div>
+
+
+            <div id="club-page-sub-nav" class="bg-[rgb(236, 236, 234)] h-14 p-10 pt-5">
+                <nav>
+                    <ul class="list-none">
+                        <li class="inline-block mr-5"><a href="./clubs/Debate.html" id="aboutClubLink" class="aboutClubLink relative no-underline text-[#333] active:text-[#00f] active:after:content-none active:after:absolute active:after:left-0 active:after:w-full active:after:bg-[blue] active:after:transition active:after:ease-linear active:after:duration-300 " style="bottom: -3px;">About Club</a></li>
+                        <li class="inline-block mr-5"><a href="clubfaq.html" id="faqLink" class="relative no-underline text-[#333] active:text-[#00f] active:after:content-none active:after:absolute active:after:left-0 active:after:w-full active:after:bg-[blue] active:after:transition active:after:ease-linear active:after:duration-300 " style="bottom: -3px;">Club FAQs</a></li>
+                        <li class="inline-block mr-5">
+                            <div id="mini-bar" class="bg-transparent m-0 relative" style="bottom: -8px">
+                                <div id="mini-bar-dropdown" class="float-left transition duration-300 hover:bg-[rbga(10,10,122,0.103)] hover:transition hover:duration-300">
+                                    <button id="mini-bar-manage-name" class="size-4 border-none outline-none text-black px-1 bg-inherit w-fit h-fit"> Manage Club
+                                        <i class="fa fa-caret-down"></i>
+                                      </button>
+                                      <div id="mini-bar-content" class="hidden absolute bg-white min-w-28 shadow-lg shadow-[rgba(0,0,0,0.2)] z-0 rounded-bl-2xl rounded-br-2xl">
+                                            <a href="general.html" id="generalLink" class="auth-required-link-main-sub float-none text-black px-2 py-2 no-underline block text-left hover:bg-[#ddd]">General</a>
+                                            <a href="vote.html" id="voteLink" class="auth-required-link-main-sub float-none text-black px-2 py-2 no-underline block text-left hover:bg-[#ddd]">Voting Station</a>
+                                      </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+
+
+            <div id="general-main-container" class="flex min-h-[45vh] w-full gap-8 p-7">
+
+                <div id="exec-gen" class="exec-gen">
+                    <div id="broadcast-section" class="broadcast-section">
+                        <div id="broadcast-section-label" class="broadcast-section-label">
+                            <h2>Broadcast</h2>
+                        </div>
+
+                        <div id="broadcast-content-container" class="broadcast-content-container">
+                            <div class="send-notifications-container">
+                                <div class="send-notifications">
+                                    <h2>Broadcast</h2>
+                                    <button type="button" class="broadcast-collapsible">Send Broadcast
+                                        <i class="fa fa-caret-down"></i>
+                                    </button>
+                                    
+                                    <div class="broadcast-content" id="broadcastFormContainer">
+                                        <form id="notificationForm" action="exec.html">
+                                            <label for="subject">Subject:</label>
+                                            <input type="text" id="subject" name="subject" required><br><br>
+                                            <label for="messageBody">Message Body:</label><br>
+                                            <textarea id="messageBody" name="messageBody" rows="4"
+                                                required></textarea><br><br>
+                                            <label for="recipientPositions">Select Recipients:</label><br>
+                                            <select id="recipientPositions" name="recipientPositions">
+                                                <option value="send-to-exec">Executive members</option>
+                                                <option value="send-club-chat">Club Chat</option>
+                                            </select><br><br>
+                                            <input type="checkbox" id="send-email-from-exec">
+                                            <label for="send-email-from-exec">Send Email Notification</label><br><br>
+                                            <button class="send-btn" type="submit">Send</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+
+                    <div class="application-section">
+                        <div class="applications-label">
+                            <h2>Applications</h2>
+                        </div>
+                        <br>
+                        <div class="applications-content">
+                            <table class="applications-table">
+                                <thead>
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Motivation</th>
+                                        <th>Relevant Skills</th>
+                                        <th>Expectations</th>
+                                        <th>Want to Lead?</th>
+                                        <th>Availability</th>
+                                        <th>Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Kdi Dornelly</td>
+                                        <td>I heard about it from the website</td>
+                                        <td>Yes, I am efficient, have good time management skills, etc</td>
+                                        <td>I hope to network quite a bit, and develop useful connections that will properl
+                                            me into my future.</td>
+                                        <td>No</td>
+                                        <td>No</td>
+                                        <td class="buttons"><button class="accept-app">Accept</button><br><button
+                                                class="decline-app">Decline</button></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+
+                </div>
+
+            </div>
+
+
+
+
+        </main>
+
+    </div>
+
+    <footer class="bg-gray-300 pt-4 w-full">
+
+        <!-- Nav Bar link icons -->
+        <div class="flex flex-col py-2 items-center text-2xl text-blue-900" id="footer-nav-bar">
+            <ul class="flex gap-8">
+                <li><a href=""><i class="fa-solid fa-envelope hover:text-blue-700"></i></a></li>
+                <li><a href=""><i class="fa-brands fa-instagram hover:text-blue-700"></i></a></li>
+                <li><a href=""><i class="fa-brands fa-whatsapp hover:text-blue-700"></i></a></li>
+                <li><a href=""><i class="fa-brands fa-facebook hover:text-blue-700"></i></a></li>
+                <li><a href=""><i class="fa-brands fa-youtube hover:text-blue-700"></i></a></li>
+            </ul>
+
+        </div>
+
+        <!-- Nav Bar link pages -->
+        <div class="flex flex-col py-2 items-center text-gray-600">
+            <ul class="flex gap-12">
+                <li><a href="" class="hover:text-black">About Us</a></li>
+                <li><a href="" class="hover:text-black">Contact Us</a></li>
+                <li><a href="" class="hover:text-black">Privacy Policy</a></li>
+            </ul>
+        </div>
+
+
+        <div class="flex flex-col items-center text-center py-2 text-blue-900 bg-gray-400">
+            <p>Copyright &copy;2024; All rights reserved.</p>
+            <p> Designed by <span class="designer">Kdi Dornelly & Valus Joseph</span></p>
+        </div>
+    </footer>
+
+</body>
+
+<script src="../../dist/bundle.js"></script>
+
+</html>

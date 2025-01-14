@@ -92,7 +92,8 @@
             <div id="nav-bar-dropdown-menu"
                 class="hidden bg-gray-400 py-6 px-3 absolute right-12 top-36 w-64 rounded-2xl z-10 transition-height duration-200 ease-in-out">
                 <ul class="space-y-4 px-6 py-6">
-                    <li><a href="../../index.html" class="text-white text-xl transition hover:text-blue-900">Home</a></li>
+                    <li><a href="../../index.html" class="text-white text-xl transition hover:text-blue-900">Home</a>
+                    </li>
                     <li><a href="explore.html" class="text-white text-xl transition hover:text-blue-900">Explore</a>
                     </li>
                     <li><a href="#" class="text-white text-xl transition hover:text-blue-900">Forums</a></li>
@@ -126,17 +127,162 @@
                 </div>
 
             </div>
+
+
+
+            <div class="forums-main-container flex flex-row relative mt-0">
+                <div class="w-1/12 block relative toggle cursor-pointer top-5 left-5">
+                    <!-- SVG icon for toggle -->
+                    <svg class="nav__expand w-10 h-10 fill-black transition-transform duration-500 hover:rotate-90"
+                        viewBox="0 0 256 512" width="100" title="angle-right">
+                        <path
+                            d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z" />
+                    </svg>
+                </div>
+
+                <div
+                    class="reminders w-72 bg-[#dbd5d5b0] shadow-md border-l border-l-black relative p-10 text-[rgb(0, 0, 0)] hidden active:block">
+                    <h1 class="text-center" style="font-family: 'Muli', sans-serif;">Notices</h1><br>
+                    <div class="reminders-container">
+                        <!--                         
+                        <div class="notification border-solid border-[#ccc] p-2 rounded-s bg-[#aabeda] hover:bg-[#f0f0f0] cursor-pointer">
+                            <div class="notification-header">
+                                <small>${formattedTimestamp}</small>
+                            </div>
+                            <div class="notification-content">
+                                <p class="mx-5 my-0"><strong>${clubName}:</strong></p>
+                                <p>${notification.message}</p>
+                            </div>
+                        </div> -->
+
+                    </div>
+
+
+                </div>
+
+                <div class="gap-4 flex w-full h-fit px-2 max-h-screen">
+
+                    <div class="chat chat-placeholder relative w-2/3 flex-1 p-2 rounded-tl-3xl rounded-tr-3xl bg-gray-800 border-1 m-8 mr-0 mb-0 text-center text-white"
+                        style="max-height: 700px; font-family: 'Muli', sans-serif;">
+                        <div class="chat-placeholder-content">
+                            <h1 class="text-center">No Active Chats</h1>
+                            <h2 class="text-center">Select Group in Inbox to Chat</h2>
+
+
+
+                            <!-- <div style="float: right; margin-left: 50%;">
+                                <div class="close-chat-btn text-[#6036e0] float-right mt-5"
+                                    style="align-content: flex-end;">✕</div>
+                            </div>
+                            <div style="display: flex;">
+                                <div class="chat-headerflex rounded-bl-3xl rounded-br-3xl">
+                                    <h1 class="p-1 mb-5">${clubName}</h1>
+                                </div>
+                            </div>
+                            <div class="club-messages-main bg-[#0000002c] w-full opacity-85 p-2 overflow-y-auto"
+                                style="max-height: 700px; z-index: 5;">
+                                <div class="chat-logs p-4 h-96 overflow-y-scroll" id="chat-logs">
+
+
+                                    <div class="message mb-5 p-3 w-auto gap-1 rounded-lg bg-[#403e5b7c] float-left clear-both my-1 mr-1 ml-5">
+                                        <span class="message-timestamp text-sm text-right text-[#fff] font-medium ml-1">Testing! Mic Check</span>
+                                        <button class="delete-btn p-1 rounded-sm bg-gray-500 text-[black]" style="display: none;">Delete</button>
+                                    </div>
+
+                                    
+                                    <div class="message sender-message w-auto bg-[#6036e0] float-right clear-both mt-1 mr-5 mb-1 ml-1 p-4 rounded-2xl"></div>
+
+
+
+
+
+                                </div>
+                            </div>
+                            <div>
+
+                                <div class="chat-input">
+                                    <form id="message-form" style="display: flex; margin-bottom: 0;">
+                                        <input type="text" id="chat-input" placeholder="Send a message..." required
+                                            class="mt-2 bg-[#dde1e3] w-full relative h-12 py-2 pr-12 pl-4 resize-none border-solid border-[#ccc] text-[#5d5c5c] border-t-0 rounded-br-md rounded-bl-md overflow-hidden" />
+                                        <button type="submit" id="send-message-btn"
+                                            style="height: fit-content; margin-top: 10px; border-radius: 8px;"><i
+                                                class="fas fa-paper-plane"></i></button>
+                                    </form>
+                                </div>
+                            </div> -->
+
+                            <!-- Stop delete here! -->
+
+
+
+                        </div>
+                    </div>
+
+                    <div
+                        class="inbox relative w-1/3 bg-gray-800 ml-0 overflow-y-auto shadow-md border-1 m-8 mr-0 mb-0 text-center text-white rounded-tl-3xl rounded-tr-3xl">
+                        <div class="w-full">
+                            <h1 class="p-5 mx-auto my-auto bg-gray-800  text-white text-center">Inbox</h1>
+                        </div>
+                        <div class="inbox-main px-2 py-2">
+
+                            <!-- Temp Additions for tailwind purposes -->
+                            <!-- <div
+                            class="club-item p-3 bg-[#fff] rounded-md  cursor-pointer transition-colors duration-300 ease-in-out list-none w-full leading-3 h-12 border-solid border-[rgb(231, 227, 227)] top-1/4 border-1 aspect-auto mb-1 hover:bg-[#aabeda]">
+
+
+                        </div> -->
+
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div id="toast"
+                class="toast hidden fixed bottom-5 left-1/2 -translate-x-1/2 bg-[#333] text-[#fff] px-2 py-5 rounded-md">
+            </div>
+
+
+
+
         </main>
     </div>
 </body>
 <script src="../../dist/bundle.js"></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+
+    $(".toggle").click(function () {
+        console.log("toggling reminders");
+        $(".reminders").toggleClass('hidden'); // Show/hide reminders
+        $(".reminders").toggleClass('block'); // Add block display when active
+        $(".nav__expand").toggleClass('expanded');
+    });
+
+    $(".cancel").click(function () {
+        console.log("toggling visibility");
+        $(this).parent().remove(); // Remove the reminder item
+    });
+
+
+
+    // $(".toggle").click(function () {
+    //     console.log("toggling reminders");
+    //     $(".reminders").toggleClass('active');
+    //     $(".nav__expand").toggleClass('expanded');
+    // });
+
+
+    // $(".cancel").click(function () {
+    //     console.log("toggling visibility");
+    //     $(this).parent().remove();
+    // });
+
+
+</script>
+
 </html>
-
-
-
-
-
-
-
-
-

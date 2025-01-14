@@ -1,6 +1,6 @@
 import { firebaseApp, database } from './firebaseConfig';
 import { getAuth, onAuthStateChanged, GoogleAuthProvider, signInWithPopup, signOut } from 'firebase/auth';
-import { doc, setDoc, getDoc, getDocs, onSnapshot, writeBatch, deleteDoc } from 'firebase/firestore';
+import { collection, doc, setDoc, getDoc, getDocs, onSnapshot, writeBatch, deleteDoc } from 'firebase/firestore';
 import { updateDashboard } from './dashboard';
 
 export const auth = getAuth(firebaseApp);
