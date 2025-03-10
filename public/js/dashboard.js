@@ -297,7 +297,7 @@ export async function updateDashboard(userName) {
                             const dashBody = document.getElementById("dashboard-home");
                             if (dashBody) {
                                 // club container is the 'potato' div
-                                clubContainer.setAttribute("class", `potato w-full min-h-1/2 border-2 border-solid border-gray-400 shadow-lg p-5 text-center rounded-md`);
+                                clubContainer.setAttribute("class", `potato w-full min-h-1/2 border-2 border-solid border-gray-400 shadow-lg p-5 text-center rounded-md bg-[rgba(70,117,147,0.73)]`);
                                 // clubContainer.classList.add("potato w-full min-h-1/2 border-2 border-solid border-gray-400 shadow-lg p-5 text-center rounded-md");
                                 document.getElementById("dashboard-my-clubs").appendChild(clubContainer);
 
@@ -315,13 +315,23 @@ export async function updateDashboard(userName) {
                                 //         </div>`;
 
                                 clubHTML = `
-                                <h2 class="p-3 font-medium">${name}</h2>
-                                <img alt="club image" src="${image}" class="relative mx-auto my-auto w-11/12 rounded-xl">
-                                <p class="py-7">${description}</p>
-                                <div id="dashboard-clubs-buttons" class="items-center justify-center text-center flex gap-4">
-                            <button id="goToManageBtn" type="button" data-club-id="${clubDocId}" class="px-2 py-1 rounded-md text-white bg-[rgb(20,20,66)] border-solid border-2 border-[rgb(20,20,66)]">View More</button>
-                            <button id="leaveClubBtn" type="button" data-club-id="${clubDocId}" class="px-2 py-1 rounded-md text-white bg-[rgb(87,22,22)] border-solid border-2 border-[rgb(87,22,22)]">Leave Club</button>
-                        </div>
+                                    <div class="flex flex-col items-center justify-between h-full">
+    <h2 class="p-3 font-medium text-center">${name}</h2>
+    <div class="w-full flex justify-center">
+        <img alt="club image" src="${image}" class="block mx-auto w-11/12 h-40 object-cover rounded-xl">
+    </div> <br>
+    <p class="py-4 text-center min-h-[60px]">${description}</p> <br>
+    <div class="flex flex-wrap justify-center gap-4 pb-4">
+    <button class="w-28 md:w-28 px-3 py-2 text-sm md:text-base rounded-md bg-blue-900 text-white">
+        View More
+    </button>
+    <button class="w-28 md:w-28 px-3 py-2 text-sm md:text-base rounded-md bg-red-800 text-white">
+        Leave Club
+    </button>
+</div>
+</div>
+
+
                                 `;
 
                                 clubContainer.innerHTML = clubHTML;

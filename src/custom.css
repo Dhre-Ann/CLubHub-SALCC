@@ -86,12 +86,15 @@
 }
 
 .calendar-month .prev,
-.calendar-month .next {
+.calendar-month .next,
+.calendar-month i {
     cursor: pointer;
+    font-family: 'Font Awesome 6 Free';
 }
 
 .calendar-month .prev:hover,
-.calendar-month .next:hover {
+.calendar-month .next:hover,
+.calendar-month i {
     color: rgb(20, 20, 66);
 }
 
@@ -989,7 +992,7 @@ img {
     text-align: center;
 }
 
-.prev,
+/* .prev,
 .next {
     cursor: pointer;
     position: absolute;
@@ -1005,7 +1008,7 @@ img {
     user-select: none;
     -webkit-user-select: none;
     background-color: rgba(0, 0, 0, 0.8);
-}
+} */
 
 
 .prev {
