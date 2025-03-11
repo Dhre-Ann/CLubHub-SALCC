@@ -1051,8 +1051,8 @@ img {
 
 
 /* CSS FOR GENERAL PAGE */
-.member-gen,
-.exec-gen{
+.member-gen
+/* .exec-gen */ {
     width: 100%;
     display: flex;
     padding: 20px;
@@ -1060,10 +1060,10 @@ img {
     justify-content: space-evenly;
 }
 
-.broadcast-content-container{
+/* .broadcast-content-container{
     display: flex;
     max-height: 450px;
-}
+} */
 
 .acceptance-status,
 .rejected-application{
@@ -1072,41 +1072,42 @@ img {
     border-radius: 25px;
     box-shadow: 2px 2px 10px black;
 }
-.broadcast-section{
+/* .broadcast-section{
     width: 30%;
     min-height: 150px;
     border-radius: 25px;
     box-shadow: 2px 2px 10px black;
-}
+} */
 .accepted-application{
     width: 70%;
     border-radius: 25px;
     box-shadow: 2px 2px 10px black;
 }
-.application-section{
+/* .application-section{
     width: 65%;
     border-radius: 25px;
     box-shadow: 2px 2px 10px black;
-}
+} */
 .acceptance-status-label,
 .application-form-label,
 .rejected-application-label,
 .club-members-label,
-.broadcast-section-label,
-.applications-label{
+/* .broadcast-section-label, */
+/* .applications-label{
     background-color: rgba(10, 10, 122, 0.253);
     padding: 15px;
     align-items: center;
     justify-content: center;
     border-radius: 20px 20px 0 0;
-}
+} */
 
 .acceptance-status-label h2,
 .application-form-label h2,
 .rejected-application-label h2,
-.club-members-label h2,
-.broadcast-section-label h2,
-.applications-label h2{
+.club-members-label h2
+/* .broadcast-section-label h2, */
+/* .applications-label h2 */
+{
     font-size: 25px;
     text-align: center;
     color: black;
@@ -1161,8 +1162,9 @@ img {
 }
 
 .application-form-content .application-form-content-table,
-.colleagues-content .colleague-table,
-.applications-content .applications-table{
+.colleagues-content .colleague-table
+/* .applications-content .applications-table */
+{
     width: 100%;
 }
 
@@ -1173,10 +1175,10 @@ img {
     width: 600px;
 }
 
-.applications-table{
+/* .applications-table{
     border-collapse: collapse;
     font-size: 13px;
-}
+} */
 
 .application-form-content-table th{
     background-color: rgb(59, 59, 85);
@@ -1186,9 +1188,17 @@ img {
     top: 0;
 }
 
-.colleague-table th,
-.applications-table th {
+.colleague-table th
+{
     background-color: rgb(59, 59, 85);
+    color: #fff;
+    text-align: center;
+    position: sticky;
+    top: 0;
+}
+.applications-table th{
+    /* background-color: rgba(37, 100, 235, 0.553); */
+    box-shadow: black;
     color: #fff;
     text-align: center;
     position: sticky;
@@ -1233,13 +1243,13 @@ img {
     color: #000;
 }
 
-.buttons .accept-app{
+/* .buttons .accept-app{
     background-color: rgb(19, 151, 19);
 }
 
 .buttons .decline-app{
     background-color: rgb(190, 15, 15);
-}
+} */
 
 .buttons .accept-app:active,
 .buttons .decline-app:active{

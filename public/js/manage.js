@@ -463,68 +463,92 @@ async function setGeneralPage(username, clubName) {
             // Create main content holder
 
             const execGeneralContainer = document.createElement('div');
-            execGeneralContainer.classList.add('exec-gen');
+            // execGeneralContainer.classList.add('exec-gen');
+            execGeneralContainer.classList = "exec-gen flex flex-row responsive-container gap-8 w-full px-3 py-5";
 
             // create content for the broadcast section
             const broadcastSectionContainer = document.createElement('div');
-            broadcastSectionContainer.classList.add('broadcast-section');
+            // broadcastSectionContainer.classList.add('broadcast-section');
+            broadcastSectionContainer.classList = "broadcast-section w-full md:w-1/3 min-w-0 bg-gray-800 text-white p-4 rounded-lg shadow-lg";
 
             const broadcastLabel = document.createElement('div');
-            broadcastLabel.classList.add('broadcast-section-label');
-            broadcastLabel.innerHTML = `<h2>Broadcast</h2>`;
+            // broadcastLabel.classList.add('broadcast-section-label');
+            broadcastLabel.classList = "broadcast-section-label bg-blue-600 p-4 rounded-t-lg text-center text-xl font-bold";
+            broadcastLabel.innerHTML = `Broadcast`;
 
             const broadcastContent = document.createElement('div');
             broadcastContent.classList.add('broadcast-content-container');
             // The following html was originally stored in mainManageContainer.innerHTML
             broadcastContent.innerHTML = `
-      <div class="send-notifications-container">
-            <div class="send-notifications">
-              <button type="button" class="broadcast-collapsible">Send Broadcast</button>
-              <div class="broadcast-content" id="broadcastFormContainer">
-                <form id="notificationForm" action="exec.html">
-                  <label for="subject">Subject:</label>
-                  <input type="text" id="subject" name="subject" required><br><br>
-                  <label for="messageBody">Message Body:</label><br>
-                  <textarea id="messageBody" name="messageBody" rows="4" required></textarea><br><br>
-                  <label for="recipientPositions">Select Recipients:</label><br>
-                  <select id="recipientPositions" name="recipientPositions">
-                    <option value="send-to-exec">Executive members</option>
-                    <option value="send-club-chat">Club Chat</option>
-                  </select><br><br>
-                  <input type="checkbox" id="send-email-from-exec">
-                  <label for="send-email-from-exec">Send Email Notification</label><br><br>
-                  <button class="send-btn" type="submit">Send</button>
-                </form>
-              </div>
+            <div <div class="send-notifications-container">
+            <div class="send-notifications bg-gray-900 p-6 rounded-lg shadow-lg">
+                <button type="button"
+                    class="broadcast-collapsible bg-blue-600 hover:bg-blue-700 px-5 py-2 rounded text-white flex items-center justify-between mx-auto">Send
+                    Broadcast
+                    <i class="fa fa-caret-down pl-4"></i>
+                </button>
+
+                <div class="broadcast-content mt-4" id="broadcastFormContainer" style="display: none;">
+                    <form id="notificationForm" action="exec.html">
+                        <label for="subject" class="block text-sm font-medium">Subject:</label>
+                        <input type="text" id="subject" name="subject" required
+                            class="block w-full mt-1 px-3 py-2 rounded-md bg-gray-300 text-black"><br><br>
+
+                        <label for="messageBody" class="block text-sm font-medium">Message
+                            Body:</label><br>
+                        <textarea id="messageBody" name="messageBody" rows="4"
+                            class="block w-full mt-1 px-3 py-2 rounded-md bg-gray-300 text-black"
+                            required></textarea><br><br>
+
+                        <label for="recipientPositions" class="block text-sm font-medium">Select
+                            Recipients:</label><br>
+                        <select id="recipientPositions" name="recipientPositions"
+                            class="block w-full mt-1 px-3 py-2 rounded-md bg-gray-300 text-black">
+                            <option value="send-to-exec">Executive members</option>
+                            <option value="send-club-chat">Club Chat</option>
+                        </select>
+                        <br><br>
+
+                        <input type="checkbox" id="send-email-from-exec" class="text-blue-500"
+                            checked>
+                        <label for="send-email-from-exec" class="text-sm font-medium">Send Email
+                            Notification</label><br><br>
+
+                        <button
+                            class="send-btn bg-blue-600 hover:bg-blue-700 px-5 py-2 rounded-md text-white flex items-center justify-between mx-auto"
+                            type="submit">Send</button>
+                    </form>
+                </div>
             </div>
-          </div>
-      `;  // ADD BROADCAST HTML
+            `;  // ADD BROADCAST HTML
 
             const applicationSectionContainer = document.createElement('div');
-            applicationSectionContainer.classList.add('application-section');
+            // applicationSectionContainer.classList.add('application-section');
+            applicationSectionContainer.classList = "application-section w-full md:w-2/3 min-w-0 bg-gray-800 text-white p-4 rounded-lg shadow-lg";
 
             const applicationsLabel = document.createElement('div');
-            applicationsLabel.classList.add('applications-label');
-            applicationsLabel.innerHTML = `<h2>Applications</h2>`;
+            // applicationsLabel.classList.add('applications-label');
+            applicationsLabel.classList = "applications-label bg-blue-600 p-4 rounded-t-lg text-center text-xl font-bold";
+            applicationsLabel.innerHTML = `Applications`;
 
             const breakElement = document.createElement('br');
 
             const applicationsContent = document.createElement('div');
             applicationsContent.classList.add('applications-content');
             applicationsContent.innerHTML = `
-      <table class="applications-table">
-          <thead>
-              <tr>
-                  <th>Name</th>
-                  <th>Motivation</th>
-                  <th>Relevant Skills</th>
-                  <th>Expectations</th>
-                  <th>Want to Lead?</th>
-                  <th>Availability</th>
-                  <th>Status</th>
-              </tr>
-          </thead>
-          <tbody>
+            <table class="applications-table w-full table-auto border-collapse">
+            <thead>
+                <tr>
+                    <th class="px-4 py-2 border-b text-left bg-[rgba(70,117,147,0.73)]">Name</th>
+                    <th class="px-4 py-2 border-b text-left bg-[rgba(70,117,147,0.73)]">Motivation</th>
+                    <th class="px-4 py-2 border-b text-left bg-[rgba(70,117,147,0.73)]">Relevant Skills</th>
+                    <th class="px-4 py-2 border-b text-left bg-[rgba(70,117,147,0.73)]">Expectations</th>
+                    <th class="px-4 py-2 border-b text-left bg-[rgba(70,117,147,0.73)]">Want to Lead?</th>
+                    <th class="px-4 py-2 border-b text-left bg-[rgba(70,117,147,0.73)]">Availability</th>
+                    <th class="px-4 py-2 border-b text-left bg-[rgba(70,117,147,0.73)]">Status</th>
+                </tr>
+            </thead>
+            <tbody>
           </tbody>
       </table>
       `;
@@ -551,18 +575,19 @@ async function setGeneralPage(username, clubName) {
                     applicationDataArray.forEach((applicationData) => {
                         // Create a table row for each application
                         const row = document.createElement('tr');
+                        row.classList = "border-b border-gray-700";
                         // Populate the row with application data
                         row.innerHTML = `
-              <td>${applicationData.name}</td>
-              <td>${applicationData.motivation}</td>
-              <td>${applicationData.skills}</td>
-              <td>${applicationData.expectations}</td>
-              <td>${applicationData.leadershipRoles}</td>
-              <td>${applicationData.availability}</td>
-              <td class="buttons">
-                  <button class="accept-app">Accept</button>
+              <td class="px-4 py-2">${applicationData.name}</td>
+              <td class="px-4 py-2">${applicationData.motivation}</td>
+              <td class="px-4 py-2">${applicationData.skills}</td>
+              <td class="px-4 py-2">${applicationData.expectations}</td>
+              <td class="px-4 py-2">${applicationData.leadershipRoles}</td>
+              <td class="px-4 py-2">${applicationData.availability}</td>
+              <td class="buttons px-4 py-2 text-center">
+                  <button class="accept-app bg-green-600 hover:bg-green-700 text-white px-4 py-2 my-1 rounded-md">Accept</button>
                   <br>
-                  <button class="decline-app">Decline</button>
+                  <button class="decline-app bg-red-600 hover:bg-red-700 text-white px-4 py-2 my-1 rounded-md">Decline</button>
               </td>
           `;
                         // Append the row to the table body

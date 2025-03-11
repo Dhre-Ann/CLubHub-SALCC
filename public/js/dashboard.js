@@ -16,13 +16,15 @@ function changeWeekdayLabels() {
     const weekdays = document.querySelectorAll('.calendar-weekdays div');
     if (weekdays){
         if (window.innerWidth <= 1450) {
-            weekdays[0].textContent = 'S'; // sun
-            weekdays[1].textContent = 'M'; // mon
-            weekdays[2].textContent = 'T'; // tue
-            weekdays[3].textContent = 'W'; // wed
-            weekdays[4].textContent = 'T'; // thu
-            weekdays[5].textContent = 'F'; // fri
-            weekdays[6].textContent = 'S'; // sat
+            if(weekdays[0] && weekdays[1] && weekdays[2] && weekdays[3] && weekdays[4] && weekdays[5] && weekdays[6]){
+                weekdays[0].textContent = 'S'; // sun
+                weekdays[1].textContent = 'M'; // mon
+                weekdays[2].textContent = 'T'; // tue
+                weekdays[3].textContent = 'W'; // wed
+                weekdays[4].textContent = 'T'; // thu
+                weekdays[5].textContent = 'F'; // fri
+                weekdays[6].textContent = 'S'; // sat
+            }
         } else {
             weekdays[0].textContent = 'sun';
             weekdays[1].textContent = 'mon';
@@ -34,7 +36,6 @@ function changeWeekdayLabels() {
         }
     }
 }
-window.addEventListener('resize', changeWeekdayLabels);
 
 // Function to adjust layout of dashboard page (responsive behaviour with calendar and clubs div)
 function adjustLayout() {
@@ -301,6 +302,7 @@ export async function createPopup(popupType, clubId, nomPost) {
 //function to add and delete clubs to and from in user dashboard in real time.
 export async function updateDashboard(userName) {
     changeWeekdayLabels(); // Call function to update labels
+    window.addEventListener('resize', changeWeekdayLabels);
     adjustLayout() // Call function to fix dashboard layout: responsive design
 
     let currentIndex = 0;

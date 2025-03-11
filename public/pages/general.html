@@ -114,18 +114,29 @@
             <div id="club-page-sub-nav" class="bg-[rgb(236, 236, 234)] h-14 p-10 pt-5">
                 <nav>
                     <ul class="list-none">
-                        <li class="inline-block mr-5"><a href="./clubs/Debate.html" id="aboutClubLink" class="aboutClubLink relative no-underline text-[#333] active:text-[#00f] active:after:content-none active:after:absolute active:after:left-0 active:after:w-full active:after:bg-[blue] active:after:transition active:after:ease-linear active:after:duration-300 " style="bottom: -3px;">About Club</a></li>
-                        <li class="inline-block mr-5"><a href="clubfaq.html" id="faqLink" class="relative no-underline text-[#333] active:text-[#00f] active:after:content-none active:after:absolute active:after:left-0 active:after:w-full active:after:bg-[blue] active:after:transition active:after:ease-linear active:after:duration-300 " style="bottom: -3px;">Club FAQs</a></li>
+                        <li class="inline-block mr-5"><a href="./clubs/Debate.html" id="aboutClubLink"
+                                class="aboutClubLink relative no-underline text-[#333] active:text-[#00f] active:after:content-none active:after:absolute active:after:left-0 active:after:w-full active:after:bg-[blue] active:after:transition active:after:ease-linear active:after:duration-300 "
+                                style="bottom: -3px;">About Club</a></li>
+                        <li class="inline-block mr-5"><a href="clubfaq.html" id="faqLink"
+                                class="relative no-underline text-[#333] active:text-[#00f] active:after:content-none active:after:absolute active:after:left-0 active:after:w-full active:after:bg-[blue] active:after:transition active:after:ease-linear active:after:duration-300 "
+                                style="bottom: -3px;">Club FAQs</a></li>
                         <li class="inline-block mr-5">
                             <div id="mini-bar" class="bg-transparent m-0 relative" style="bottom: -8px">
-                                <div id="mini-bar-dropdown" class="float-left transition duration-300 hover:bg-[rbga(10,10,122,0.103)] hover:transition hover:duration-300">
-                                    <button id="mini-bar-manage-name" class="size-4 border-none outline-none text-black px-1 bg-inherit w-fit h-fit"> Manage Club
+                                <div id="mini-bar-dropdown"
+                                    class="float-left transition duration-300 hover:bg-[rbga(10,10,122,0.103)] hover:transition hover:duration-300">
+                                    <button id="mini-bar-manage-name"
+                                        class="size-4 border-none outline-none text-black px-1 bg-inherit w-fit h-fit">
+                                        Manage Club
                                         <i class="fa fa-caret-down"></i>
-                                      </button>
-                                      <div id="mini-bar-content" class="hidden absolute bg-white min-w-28 shadow-lg shadow-[rgba(0,0,0,0.2)] z-0 rounded-bl-2xl rounded-br-2xl">
-                                            <a href="general.html" id="generalLink" class="auth-required-link-main-sub float-none text-black px-2 py-2 no-underline block text-left hover:bg-[#ddd]">General</a>
-                                            <a href="vote.html" id="voteLink" class="auth-required-link-main-sub float-none text-black px-2 py-2 no-underline block text-left hover:bg-[#ddd]">Voting Station</a>
-                                      </div>
+                                    </button>
+                                    <div id="mini-bar-content"
+                                        class="hidden absolute bg-white min-w-28 shadow-lg shadow-[rgba(0,0,0,0.2)] z-0 rounded-bl-2xl rounded-br-2xl">
+                                        <a href="general.html" id="generalLink"
+                                            class="auth-required-link-main-sub float-none text-black px-2 py-2 no-underline block text-left hover:bg-[#ddd]">General</a>
+                                        <a href="vote.html" id="voteLink"
+                                            class="auth-required-link-main-sub float-none text-black px-2 py-2 no-underline block text-left hover:bg-[#ddd]">Voting
+                                            Station</a>
+                                    </div>
                                 </div>
                             </div>
                         </li>
@@ -134,74 +145,104 @@
             </div>
 
 
-            <div id="general-main-container" class="flex min-h-[45vh] w-full gap-8 p-7">
+            <div id="general-main-container" class="">
 
-                <div id="exec-gen" class="exec-gen">
-                    <div id="broadcast-section" class="broadcast-section">
-                        <div id="broadcast-section-label" class="broadcast-section-label">
-                            <h2>Broadcast</h2>
+                <div id="exec-gen" class="exec-gen flex flex-row responsive-container gap-8 w-full px-3 py-5">
+
+                    <div id="broadcast-section"
+                        class="broadcast-section w-full md:w-1/3 min-w-0 bg-gray-800 text-white p-4 rounded-lg shadow-lg">
+                        <div id="broadcast-section-label"
+                            class="broadcast-section-label bg-blue-600 p-4 rounded-t-lg text-center text-xl font-bold">
+                            Broadcast
                         </div>
 
+                        <!-- Broadcast content -->
                         <div id="broadcast-content-container" class="broadcast-content-container">
                             <div class="send-notifications-container">
-                                <div class="send-notifications">
-                                    <h2>Broadcast</h2>
-                                    <button type="button" class="broadcast-collapsible">Send Broadcast
-                                        <i class="fa fa-caret-down"></i>
+                                <div class="send-notifications bg-gray-900 p-6 rounded-lg shadow-lg">
+                                    <button type="button"
+                                        class="broadcast-collapsible bg-blue-600 hover:bg-blue-700 px-5 py-2 rounded text-white flex items-center justify-between mx-auto">Send
+                                        Broadcast
+                                        <i class="fa fa-caret-down pl-4"></i>
                                     </button>
-                                    
-                                    <div class="broadcast-content" id="broadcastFormContainer">
+
+                                    <div class="broadcast-content mt-4" id="broadcastFormContainer" style="display: none;">
                                         <form id="notificationForm" action="exec.html">
-                                            <label for="subject">Subject:</label>
-                                            <input type="text" id="subject" name="subject" required><br><br>
-                                            <label for="messageBody">Message Body:</label><br>
+                                            <label for="subject" class="block text-sm font-medium">Subject:</label>
+                                            <input type="text" id="subject" name="subject" required
+                                                class="block w-full mt-1 px-3 py-2 rounded-md bg-gray-300 text-black"><br><br>
+
+                                            <label for="messageBody" class="block text-sm font-medium">Message
+                                                Body:</label><br>
                                             <textarea id="messageBody" name="messageBody" rows="4"
+                                                class="block w-full mt-1 px-3 py-2 rounded-md bg-gray-300 text-black"
                                                 required></textarea><br><br>
-                                            <label for="recipientPositions">Select Recipients:</label><br>
-                                            <select id="recipientPositions" name="recipientPositions">
+
+                                            <label for="recipientPositions" class="block text-sm font-medium">Select
+                                                Recipients:</label><br>
+                                            <select id="recipientPositions" name="recipientPositions"
+                                                class="block w-full mt-1 px-3 py-2 rounded-md bg-gray-300 text-black">
                                                 <option value="send-to-exec">Executive members</option>
                                                 <option value="send-club-chat">Club Chat</option>
-                                            </select><br><br>
-                                            <input type="checkbox" id="send-email-from-exec">
-                                            <label for="send-email-from-exec">Send Email Notification</label><br><br>
-                                            <button class="send-btn" type="submit">Send</button>
+                                            </select>
+                                            <br><br>
+
+                                            <input type="checkbox" id="send-email-from-exec" class="text-blue-500"
+                                                checked>
+                                            <label for="send-email-from-exec" class="text-sm font-medium">Send Email
+                                                Notification</label><br><br>
+
+                                            <button
+                                                class="send-btn bg-blue-600 hover:bg-blue-700 px-5 py-2 rounded-md text-white flex items-center justify-between mx-auto"
+                                                type="submit">Send</button>
                                         </form>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        
+
                     </div>
 
-                    <div class="application-section">
-                        <div class="applications-label">
-                            <h2>Applications</h2>
+
+
+                    <div
+                        class="application-section w-full md:w-2/3 min-w-0 bg-gray-800 text-white p-4 rounded-lg shadow-lg">
+                        <div class="applications-label bg-blue-600 p-4 rounded-t-lg text-center text-xl font-bold">
+                            Applications
                         </div>
                         <br>
+
+                        <!-- Application content -->
                         <div class="applications-content">
-                            <table class="applications-table">
+                            <table class="applications-table w-full table-auto border-collapse">
                                 <thead>
                                     <tr>
-                                        <th>Name</th>
-                                        <th>Motivation</th>
-                                        <th>Relevant Skills</th>
-                                        <th>Expectations</th>
-                                        <th>Want to Lead?</th>
-                                        <th>Availability</th>
-                                        <th>Status</th>
+                                        <th class="px-4 py-2 border-b text-left bg-[rgba(70,117,147,0.73)]">Name</th>
+                                        <th class="px-4 py-2 border-b text-left bg-[rgba(70,117,147,0.73)]">Motivation</th>
+                                        <th class="px-4 py-2 border-b text-left bg-[rgba(70,117,147,0.73)]">Relevant Skills</th>
+                                        <th class="px-4 py-2 border-b text-left bg-[rgba(70,117,147,0.73)]">Expectations</th>
+                                        <th class="px-4 py-2 border-b text-left bg-[rgba(70,117,147,0.73)]">Want to Lead?</th>
+                                        <th class="px-4 py-2 border-b text-left bg-[rgba(70,117,147,0.73)]">Availability</th>
+                                        <th class="px-4 py-2 border-b text-left bg-[rgba(70,117,147,0.73)]">Status</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <td>Kdi Dornelly</td>
-                                        <td>I heard about it from the website</td>
-                                        <td>Yes, I am efficient, have good time management skills, etc</td>
-                                        <td>I hope to network quite a bit, and develop useful connections that will properl
+                                    <tr class="border-b border-gray-700">
+                                        <td class="px-4 py-2">Kdi Dornelly</td>
+                                        <td class="px-4 py-2">I heard about it from the website</td>
+                                        <td class="px-4 py-2">Yes, I am efficient, have good time management skills, etc
+                                        </td>
+                                        <td class="px-4 py-2">I hope to network quite a bit, and develop useful
+                                            connections that will properl
                                             me into my future.</td>
-                                        <td>No</td>
-                                        <td>No</td>
-                                        <td class="buttons"><button class="accept-app">Accept</button><br><button
-                                                class="decline-app">Decline</button></td>
+                                        <td class="px-4 py-2">No</td>
+                                        <td class="px-4 py-2">No</td>
+                                        <td class="buttons px-4 py-2 text-center">
+                                            <button
+                                                class="accept-app bg-green-600 hover:bg-green-700 text-white px-4 py-2 my-1 rounded-md">Accept</button><br>
+                                            <button
+                                                class="decline-app bg-red-600 hover:bg-red-700 text-white px-4 py-2 my-1 rounded-md">Decline</button>
+                                        </td>
                                     </tr>
                                 </tbody>
                             </table>
