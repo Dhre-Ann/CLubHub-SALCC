@@ -121,6 +121,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    font-weight: 600;
 }
 
 .calendar-days {
@@ -274,66 +275,53 @@
     }
 }
 
-@media (max-width: 1200px) {
-    .dashboard-info-container {
-        flex-direction: column;
-        padding: 50px;
+@media (max-width: 1350px) {
+
+    .responsive-container {
+        flex-direction: column !important;
     }
 
-    .dashboard-club-container {
-        width: 100% !important;
-    }
-
-    .dashboard-notice-container {
+    /* Ensure full width when stacked */
+    .responsive-container > div {
         width: 100% !important;
     }
 
     .calendar-container {
-        min-height: 500px;
-        width: 100%;
         display: flex;
         flex-direction: row;
+        min-height: 600px;
     }
 
-    .calendar-container .calendar-only {
-        width: 50%;
-        min-height: min-content !important;
-        max-height: max-content;
-    }
-
+    .calendar-container .calendar-only,
     .calendar-container .responsive-right-side {
         width: 50%;
     }
 
-    .calendar-container .right-calendar {
-        min-height: 50% !important;
+    #dashboard-my-clubs{
+        min-height: 150px;
+    }
+
+    .calendar-container .plus-btn-only {
+        position: static;
+        bottom: 100px;
+        right: 20px;
     }
 }
 
 @media (max-width: 945px) {
-    .dashboard-info-container {
-        flex-direction: column;
-    }
-
     .dashboard-my-clubs {
         display: flex !important;
         flex-direction: column;
-        grid-template-columns: none;
         width: 100% !important;
         gap: 6rem !important;
-    }
-
-    .dashboard-club {
-        min-height: 45vh;
     }
 
     .dashboard-banner-text {
         left: 10%;
     }
 
+    /* Ensure calendar stacks properly */
     .calendar-container {
-        min-height: 1000px;
-        width: 100%;
         display: flex;
         flex-direction: column;
     }
@@ -343,9 +331,14 @@
         width: 100%;
     }
 
+    .calendar-container .plus-btn-only {
+        position: static;
+        bottom: 20px;
+        right: 15px;
+    }
 }
 
-@media(max-width: 740px) {
+@media (max-width: 740px) {
     .dashboard-banner-text {
         width: 100%;
         left: 0;

@@ -1,16 +1,65 @@
 import { doc, setDoc, getDoc, onSnapshot, deleteDoc } from 'firebase/firestore'
-import {username, storeClubName, getClubName} from './login';
+import { username, storeClubName, getClubName } from './login';
 import { database } from './firebaseConfig';
 
 let processedClubIds = []; // Array to store IDs of processed clubs
 
 // ______________________________________________________________________________________________
 // Function to reindex divs? Not sure if this is needed, grid works dynamically
-    // Confirmed - not needed
+// Confirmed - not needed
 
 // Function to create popups - THIS IS IMPORTANT!!!!!!!!
 // ______________________________________________________________________________________________
 
+// Function to update labels in calendar
+function changeWeekdayLabels() {
+    const weekdays = document.querySelectorAll('.calendar-weekdays div');
+    if (window.innerWidth <= 1450) {
+        weekdays[0].textContent = 'S'; // sun
+        weekdays[1].textContent = 'M'; // mon
+        weekdays[2].textContent = 'T'; // tue
+        weekdays[3].textContent = 'W'; // wed
+        weekdays[4].textContent = 'T'; // thu
+        weekdays[5].textContent = 'F'; // fri
+        weekdays[6].textContent = 'S'; // sat
+    } else {
+        weekdays[0].textContent = 'sun';
+        weekdays[1].textContent = 'mon';
+        weekdays[2].textContent = 'tue';
+        weekdays[3].textContent = 'wed';
+        weekdays[4].textContent = 'thu';
+        weekdays[5].textContent = 'fri';
+        weekdays[6].textContent = 'sat';
+    }
+}
+window.addEventListener('resize', changeWeekdayLabels);
+
+// Function to adjust layout of dashboard page (responsive behaviour with calendar and clubs div)
+function adjustLayout() {
+    const container = document.querySelector(".responsive-container");
+    const childDivs = container.children;
+
+    if (window.innerWidth <= 1200) {
+        container.classList.add("flex-col");
+        container.classList.remove("flex-row");
+
+        // Make child divs full width
+        for (let div of childDivs) {
+            div.classList.add("w-full");
+        }
+    } else {
+        container.classList.add("flex-row");
+        container.classList.remove("flex-col");
+
+        // Reset child div widths
+        childDivs[0].classList.remove("w-full");
+        childDivs[0].classList.add("md:w-2/3");
+
+        childDivs[1].classList.remove("w-full");
+        childDivs[1].classList.add("md:w-1/3");
+    }
+}
+window.addEventListener("resize", adjustLayout);
 
 // Function to handle club deletes
 async function leaveClub(clubId, userName) {
@@ -38,11 +87,11 @@ async function leaveClub(clubId, userName) {
                 clubsArr.splice(index, 1);
 
                 // Update the user's document in the database with the modified clubs array
-                await setDoc(userDocRef, { 
-                    clubs: clubsArr, 
-                    clubCount: clubCount 
-                }, 
-                { merge: true });
+                await setDoc(userDocRef, {
+                    clubs: clubsArr,
+                    clubCount: clubCount
+                },
+                    { merge: true });
                 console.log("Club successfully removed from the user's clubs.");
 
             } else {
@@ -152,21 +201,21 @@ export async function addToClub(clubName, userName) {
     }
 }
 
-export async function createPopup(popupType, clubId, nomPost){
+export async function createPopup(popupType, clubId, nomPost) {
     const popupDiv = document.createElement('div');
-    popupDiv.setAttribute('id','popup');
-    popupDiv.setAttribute('class','fixed mx-auto my-auto z-50 w-1/3 min-h-52 max-h-fit top-0 bottom-0 left-0 right-0 p-12 bg-[rgb(14,14,36)] text-white rounded-3xl border-2 border-white border-solid shadow-lg text-center justify-center');
+    popupDiv.setAttribute('id', 'popup');
+    popupDiv.setAttribute('class', 'fixed mx-auto my-auto z-50 w-1/3 min-h-52 max-h-fit top-0 bottom-0 left-0 right-0 p-12 bg-[rgb(14,14,36)] text-white rounded-3xl border-2 border-white border-solid shadow-lg text-center justify-center');
 
     const popupTextDiv = document.createElement('div');
-    popupTextDiv.setAttribute('id','popup-text');
-    popupTextDiv.setAttribute('class','relative flex flex-wrap text-white font-medium text-lg text-center');
-    
+    popupTextDiv.setAttribute('id', 'popup-text');
+    popupTextDiv.setAttribute('class', 'relative flex flex-wrap text-white font-medium text-lg text-center');
+
 
     const popupButtonsDiv = document.createElement('div');
-    popupButtonsDiv.setAttribute('id','session-popup-buttons');
-    popupButtonsDiv.setAttribute('class','relative gap-4 flex text-center items-center justify-center mx-auto my-auto w-full p-2 transform');
-    
-    if (popupType == "leaveClub"){
+    popupButtonsDiv.setAttribute('id', 'session-popup-buttons');
+    popupButtonsDiv.setAttribute('class', 'relative gap-4 flex text-center items-center justify-center mx-auto my-auto w-full p-2 transform');
+
+    if (popupType == "leaveClub") {
         // add text
         popupTextDiv.innerHTML = `<p class="relative float-start">Are you sure you would like to leave this club? <br> You will need to go through the entire registration process again if you wish to rejoin.</p>`;
         // add specific button content
@@ -174,7 +223,7 @@ export async function createPopup(popupType, clubId, nomPost){
         <button type="button" id="leave-club" class="px-2 py-1 rounded-md text-white bg-[rgb(87,22,22)] border-none hover:border-2 hover:border-solid hover:border-[rgb(87,22,22)] hover:text-[rgb(87,22,22)] hover:bg-white transform transition-colors transition-opacity ">Leave</button>
         <button type="button" id="cancel-leave-club" class="text-center px-2 py-1 min-w-16 bg-[#fff] border-none font-semibold text-[rgb(14,14,36)] rounded-md hover:border-2 hover:border-solid hover:border-white hover:text-[#fff] hover:bg-[rgb(14,14,36)] transform transition-colors transition-opacity ">Cancel</button>`;
 
-    } else if (popupType == "registration"){
+    } else if (popupType == "registration") {
         const clubName = await getClubName(clubId);
         //add text
         popupTextDiv.innerHTML = `
@@ -185,7 +234,7 @@ export async function createPopup(popupType, clubId, nomPost){
         popupButtonsDiv.innerHTML = `
         <button id="okay" class="class="px-2 py-1 rounded-md text-white bg-[rgb(87,22,22)] border-none hover:border-2 hover:border-solid hover:border-[rgb(87,22,22)] hover:text-[rgb(87,22,22)] hover:bg-white transform transition-colors transition-opacity ">Okay</button>
         `;
-    } else if (popupType == "dupNomination"){
+    } else if (popupType == "dupNomination") {
         // add text
         popupTextDiv.innerHTML = `
         <p class="relative float-start">This member has already been nominated for ${nomPost}.</p> <p>Feel free to nominate them for something else.</p>
@@ -236,7 +285,7 @@ export async function createPopup(popupType, clubId, nomPost){
         });
     } else {
         const okayBtn = popupDiv.querySelector('.okay');
-        okayBtn.addEventListener('click', function() {
+        okayBtn.addEventListener('click', function () {
             // Close popup 
             document.body.removeChild(popupDiv);
             document.body.removeChild(popupOverlayDiv);
@@ -247,6 +296,9 @@ export async function createPopup(popupType, clubId, nomPost){
 
 //function to add and delete clubs to and from in user dashboard in real time.
 export async function updateDashboard(userName) {
+    changeWeekdayLabels(); // Call function to update labels
+    adjustLayout() // Call function to fix dashboard layout: responsive design
+
     let currentIndex = 0;
     try {
         const docRef = doc(database, "Students", userName);
@@ -274,7 +326,7 @@ export async function updateDashboard(userName) {
                         // Re-index the remaining divs
                         reIndexDivs(deletedClubIndex);
                     }
-                });                
+                });
 
                 // Process new clubs
                 for (const clubRef of clubsArr) {
@@ -289,7 +341,7 @@ export async function updateDashboard(userName) {
                             const clubData = clubDoc.data();
                             const name = clubData.name;
                             const image = clubData.image;
-                            
+
                             const description = clubData.description;
 
                             // Create a new potato div
@@ -306,13 +358,6 @@ export async function updateDashboard(userName) {
 
                                 // Update club information
                                 let clubHTML = "";
-                                // clubHTML = `<h2>${name}</h2><br>
-                                //         <img alt="club image" src="${image}"> <br><br>
-                                //         <p>${description}</p> <br>
-                                //         <div class="dashboard-clubs-buttons">
-                                //         <button class="goToManageBtn" type="button" data-club-id="${clubDocId}">View More</button>
-                                //         <button class="leaveClubBtn" type="button">Leave Club</button>
-                                //         </div>`;
 
                                 clubHTML = `
                                     <div class="flex flex-col items-center justify-between h-full">
@@ -375,6 +420,25 @@ export async function updateDashboard(userName) {
                         } else {
                             console.log("Club document does not exist:", clubId);
                         }
+                    }
+                }
+                // check if no clubs added
+                if (clubsArr.length === 0) {
+                    const dashContainer = document.getElementById("dashboard-my-clubs");
+
+                    if (dashContainer) {
+                        // Remove grid classes and apply flex for centering
+                        dashContainer.className = "py-8 flex justify-center items-center w-full";
+
+                        dashContainer.innerHTML = `
+                            <div class="p-6 bg-gray-800 text-white rounded-lg shadow-md text-center">
+                                <p class="text-lg font-semibold">No Clubs Joined</p>
+                                <br>
+                                <button type="button" class="px-5 py-2 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg shadow">
+                                    Explore Clubs
+                                </button>
+                            </div>
+                        `;
                     }
                 }
             } else {
