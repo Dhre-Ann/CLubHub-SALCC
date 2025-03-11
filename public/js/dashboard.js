@@ -14,22 +14,24 @@ let processedClubIds = []; // Array to store IDs of processed clubs
 // Function to update labels in calendar
 function changeWeekdayLabels() {
     const weekdays = document.querySelectorAll('.calendar-weekdays div');
-    if (window.innerWidth <= 1450) {
-        weekdays[0].textContent = 'S'; // sun
-        weekdays[1].textContent = 'M'; // mon
-        weekdays[2].textContent = 'T'; // tue
-        weekdays[3].textContent = 'W'; // wed
-        weekdays[4].textContent = 'T'; // thu
-        weekdays[5].textContent = 'F'; // fri
-        weekdays[6].textContent = 'S'; // sat
-    } else {
-        weekdays[0].textContent = 'sun';
-        weekdays[1].textContent = 'mon';
-        weekdays[2].textContent = 'tue';
-        weekdays[3].textContent = 'wed';
-        weekdays[4].textContent = 'thu';
-        weekdays[5].textContent = 'fri';
-        weekdays[6].textContent = 'sat';
+    if (weekdays){
+        if (window.innerWidth <= 1450) {
+            weekdays[0].textContent = 'S'; // sun
+            weekdays[1].textContent = 'M'; // mon
+            weekdays[2].textContent = 'T'; // tue
+            weekdays[3].textContent = 'W'; // wed
+            weekdays[4].textContent = 'T'; // thu
+            weekdays[5].textContent = 'F'; // fri
+            weekdays[6].textContent = 'S'; // sat
+        } else {
+            weekdays[0].textContent = 'sun';
+            weekdays[1].textContent = 'mon';
+            weekdays[2].textContent = 'tue';
+            weekdays[3].textContent = 'wed';
+            weekdays[4].textContent = 'thu';
+            weekdays[5].textContent = 'fri';
+            weekdays[6].textContent = 'sat';
+        }
     }
 }
 window.addEventListener('resize', changeWeekdayLabels);
@@ -39,24 +41,26 @@ function adjustLayout() {
     const container = document.querySelector(".responsive-container");
     const childDivs = container.children;
 
-    if (window.innerWidth <= 1200) {
-        container.classList.add("flex-col");
-        container.classList.remove("flex-row");
-
-        // Make child divs full width
-        for (let div of childDivs) {
-            div.classList.add("w-full");
+    if (container) {
+        if (window.innerWidth <= 1200) {
+            container.classList.add("flex-col");
+            container.classList.remove("flex-row");
+    
+            // Make child divs full width
+            for (let div of childDivs) {
+                div.classList.add("w-full");
+            }
+        } else {
+            container.classList.add("flex-row");
+            container.classList.remove("flex-col");
+    
+            // Reset child div widths
+            childDivs[0].classList.remove("w-full");
+            childDivs[0].classList.add("md:w-2/3");
+    
+            childDivs[1].classList.remove("w-full");
+            childDivs[1].classList.add("md:w-1/3");
         }
-    } else {
-        container.classList.add("flex-row");
-        container.classList.remove("flex-col");
-
-        // Reset child div widths
-        childDivs[0].classList.remove("w-full");
-        childDivs[0].classList.add("md:w-2/3");
-
-        childDivs[1].classList.remove("w-full");
-        childDivs[1].classList.add("md:w-1/3");
     }
 }
 window.addEventListener("resize", adjustLayout);
@@ -367,10 +371,10 @@ export async function updateDashboard(userName) {
     </div> <br>
     <p class="py-4 text-center min-h-[60px]">${description}</p> <br>
     <div class="flex flex-wrap justify-center gap-4 pb-4">
-    <button class="w-28 md:w-28 px-3 py-2 text-sm md:text-base rounded-md bg-blue-900 text-white">
+    <button id="goToManageBtn" data-club-id="${clubDocId}" class="w-28 md:w-28 px-3 py-2 text-sm md:text-base rounded-md bg-blue-900 text-white">
         View More
     </button>
-    <button class="w-28 md:w-28 px-3 py-2 text-sm md:text-base rounded-md bg-red-800 text-white">
+    <button id="leaveClubBtn" class="w-28 md:w-28 px-3 py-2 text-sm md:text-base rounded-md bg-red-800 text-white">
         Leave Club
     </button>
 </div>
