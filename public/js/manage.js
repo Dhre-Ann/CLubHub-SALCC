@@ -180,7 +180,7 @@ document.body.addEventListener('click', (event) => {
 
 
 // Function to change join club to leave club
-async function joinLeaveClub(username, clubName) {
+async function joinLeaveClubToggle(username, clubName) {
     console.log("join/leave club button toggle function triggered");
     // Get doc ref for members
     const docRef = doc(database, "Clubs", clubName, "Members", username);
@@ -246,15 +246,26 @@ async function getUserStatus(username, clubName) {
 }
 
 
-
-
-
-
-
-
-
-
-
+// FIXME
+// async function populateNominees(clubName) {}
+// async function isNominated(clubName) {}
+// async function getNominationRequestPositions(username, clubName) {}
+// async function setVotePage(username, clubName) {}
+// async function handleMemberView(mainContainer, username, clubName, nominationsOpen, votingOpen) {}
+// async function handleExecutiveView(mainContainer, clubName, nominationsOpen, votingOpen) {}
+// function createContainer(...classes) {}
+// function displayJoinClubMessage(container) {}
+// function getNominationFormHTML() {}
+// async function manageElections(clubName) {}
+// async function fetchWinners(clubDocRef) {}
+// async function updateExecutiveMembers(clubName) {}
+// async function resetHasVotedForAllMembers(clubDocRef) {}
+// async function clearNominationRequests(clubName) {}
+// async function clearAcceptRequests(clubName) {}
+// async function updateExecutives(clubDocRef, winners) {}
+// async function updateMemberStatus(clubDocRef, winners) {}
+// async function populateCurrentExecutives(clubName) {}
+// async function populateCandidateExecutives(clubName) {}
 
 
 
@@ -774,6 +785,7 @@ function setupNotificationForm() {
                 if (sendEmail) {
                     if (recipientPositions === 'send-to-exec') {
                         // Send notifications to club executives
+                        console.log("Sending email with:", { subject, messageBody, recipientPositions, sendEmail });
                         await sendNotifications(subject, messageBody, recipientPositions);
                     } else if (recipientPositions === 'send-club-chat') {
                         // Send notifications to club members
@@ -823,7 +835,7 @@ async function sendNotificationsToExecutives(subject, messageBody) {
                         // Send email notification to executive
                         await sendEmail(subject, messageBody, studentData.email);
                         // Store notification in 'ExecutiveNotifications' subcollection
-                        await storeNotification(messageBody, 'Club Executive', new Date(), 'send-to-exec', subject);
+                        await storeNotification(subject, messageBody, recipientPositions);
                         // Update reminders section of executive's forum page
                         // await updateRemindersSection(studentData.userId, messageBody);
                         // await updateRemindersSection(memberInfoData.userId, messageBody);
@@ -855,7 +867,7 @@ async function sendNotificationsToMembers(subject, messageBody) {
                     // Send email notification to member
                     await sendEmail(subject, messageBody, memberInfoData.email);
                     // Store notification in 'GeneralNotifications' subcollection
-                    await storeNotification(messageBody, 'Club Executive', new Date(), 'send-club-chat', subject);
+                    await storeNotification(subject, messageBody, recipientPositions);
                     // Update reminders section of member's forum page
                     // await updateRemindersSection(memberInfoData.userId, messageBody);
                 } else {
@@ -969,6 +981,7 @@ async function storeNotification(subject, messageBody, recipientPositions) {
 
 // Function to send notifications based on recipient positions
 async function sendNotifications(subject, messageBody, recipientPositions) {
+    console.log("Inside sendNotifications, recipientPositions:", recipientPositions);
     try {
         if (recipientPositions === 'send-to-exec') {
             // Send notifications to club executives
