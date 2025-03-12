@@ -1,7 +1,7 @@
 import { collection, doc, setDoc, getDoc, getDocs, onSnapshot, writeBatch, query, updateDoc, deleteDoc } from 'firebase/firestore'
 import { user, userPic, storeClubName, getStoredClubName, sendNewEmail, getClubName } from './login';
 import { database } from './firebaseConfig';
-import { addClub, addToClub, createPopup } from './dashboard'
+import { addClub, addToClub, createPopup, adjustLayout } from './dashboard'
 
 let clubName;
 let username;
@@ -285,6 +285,7 @@ if (clubName && username) {
 
 
 async function setGeneralPage(username, clubName) {
+    // window.addEventListener("resize", );
     try {
         const mainManageContainer = document.querySelector(".general-main-container");
 

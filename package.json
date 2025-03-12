@@ -22,7 +22,7 @@
     "ajv-keywords": "^3.5.2",
     "browserslist": "^4.23.3",
     "buffer-from": "^1.1.2",
-    "caniuse-lite": "^1.0.30001655",
+    "caniuse-lite": "^1.0.30001703",
     "chrome-trace-event": "^1.0.4",
     "clone-deep": "^4.0.1",
     "colorette": "^2.0.20",

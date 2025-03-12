@@ -26,41 +26,87 @@ function changeWeekdayLabels() {
                 weekdays[6].textContent = 'S'; // sat
             }
         } else {
-            weekdays[0].textContent = 'sun';
-            weekdays[1].textContent = 'mon';
-            weekdays[2].textContent = 'tue';
-            weekdays[3].textContent = 'wed';
-            weekdays[4].textContent = 'thu';
-            weekdays[5].textContent = 'fri';
-            weekdays[6].textContent = 'sat';
+            if(weekdays[0] && weekdays[1] && weekdays[2] && weekdays[3] && weekdays[4] && weekdays[5] && weekdays[6]){
+                weekdays[0].textContent = 'sun';
+                weekdays[1].textContent = 'mon';
+                weekdays[2].textContent = 'tue';
+                weekdays[3].textContent = 'wed';
+                weekdays[4].textContent = 'thu';
+                weekdays[5].textContent = 'fri';
+                weekdays[6].textContent = 'sat';
+            }
         }
     }
 }
 
 // Function to adjust layout of dashboard page (responsive behaviour with calendar and clubs div)
-function adjustLayout() {
-    const container = document.querySelector(".responsive-container");
-    const childDivs = container.children;
-
-    if (container) {
+function adjustLayout() { 
+    const dashContainer = document.querySelector(".dash-responsive-container");
+    if (dashContainer) {
+        const childDivs = dashContainer.children;
         if (window.innerWidth <= 1200) {
-            container.classList.add("flex-col");
-            container.classList.remove("flex-row");
-    
+            dashContainer.classList.add("flex-col");
+            dashContainer.classList.remove("flex-row");
+
             // Make child divs full width
             for (let div of childDivs) {
                 div.classList.add("w-full");
+                div.classList.remove("md:w-2/3", "md:w-1/3");
             }
         } else {
-            container.classList.add("flex-row");
-            container.classList.remove("flex-col");
-    
+            dashContainer.classList.add("flex-row");
+            dashContainer.classList.remove("flex-col");
+
             // Reset child div widths
-            childDivs[0].classList.remove("w-full");
-            childDivs[0].classList.add("md:w-2/3");
-    
-            childDivs[1].classList.remove("w-full");
-            childDivs[1].classList.add("md:w-1/3");
+            if (childDivs.length > 1) {
+                childDivs[0].classList.remove("w-full");
+                childDivs[0].classList.add("md:w-2/3");
+
+                childDivs[1].classList.remove("w-full");
+                childDivs[1].classList.add("md:w-1/3");
+            }
+        }
+    }
+
+    const manageContainer = document.querySelector(".gen-responsive-container");
+    // console.log("manageContainer:", manageContainer); // Debugging step
+
+    if (manageContainer) {
+        
+        const manChildDivs = manageContainer.children;
+        const broadcastSectionBtn = document.querySelector(".broadcast-collapsible");
+        
+        if (window.innerWidth <= 1250) {
+            manageContainer.classList.add("flex-col");
+            manageContainer.classList.remove("flex-row");
+
+            for (let div of manChildDivs) {
+                div.classList.add("w-full");
+                div.classList.remove("md:w-2/3", "md:w-1/3");
+            }
+
+            
+            if (broadcastSectionBtn) {
+                if (window.innerWidth > 750) {
+                    broadcastSectionBtn.classList.remove("mx-auto");
+                } else {
+                    broadcastSectionBtn.classList.add("mx-auto");
+                }
+            }
+        
+        } else {
+            manageContainer.classList.add("flex-row");
+            manageContainer.classList.remove("flex-col");
+
+            if (manChildDivs.length > 1) {
+                manChildDivs[0].classList.remove("w-full");
+                manChildDivs[0].classList.add("md:w-1/3");
+
+                manChildDivs[1].classList.remove("w-full");
+                manChildDivs[1].classList.add("md:w-2/3");
+
+                broadcastSectionBtn.classList.add("mx-auto");
+            }
         }
     }
 }

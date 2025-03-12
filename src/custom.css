@@ -277,14 +277,14 @@
 
 @media (max-width: 1350px) {
 
-    .responsive-container {
+    /* .responsive-container {
         flex-direction: column !important;
-    }
+    } */
 
     /* Ensure full width when stacked */
-    .responsive-container > div {
+    /* .responsive-container > div {
         width: 100% !important;
-    }
+    } */
 
     .calendar-container {
         display: flex;
@@ -1051,8 +1051,7 @@ img {
 
 
 /* CSS FOR GENERAL PAGE */
-.member-gen
-/* .exec-gen */ {
+.member-gen{
     width: 100%;
     display: flex;
     padding: 20px;
@@ -1091,22 +1090,19 @@ img {
 .acceptance-status-label,
 .application-form-label,
 .rejected-application-label,
-.club-members-label,
-/* .broadcast-section-label, */
-/* .applications-label{
+.club-members-label
+{
     background-color: rgba(10, 10, 122, 0.253);
     padding: 15px;
     align-items: center;
     justify-content: center;
     border-radius: 20px 20px 0 0;
-} */
+}
 
 .acceptance-status-label h2,
 .application-form-label h2,
 .rejected-application-label h2,
 .club-members-label h2
-/* .broadcast-section-label h2, */
-/* .applications-label h2 */
 {
     font-size: 25px;
     text-align: center;
@@ -1226,11 +1222,13 @@ img {
 
 /* change color for every other row */
 .colleague-table tbody tr:nth-of-type(even){
-    background-color: #f5f5f557;
+    /* background-color: #f5f5f557; */
+    background-color: rgba(70,117,147,0.059);
 }
 
 .applications-table tbody tr:nth-of-type(even){
-    background-color: #f5f5f58e;
+    /* background-color: #f5f5f58e; */
+    background-color: rgba(70, 117, 147, 0.059);
 }
 
 .buttons button{
