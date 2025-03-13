@@ -531,53 +531,60 @@ async function renderNotifications(notifications) {
         const remindersSection = document.getElementsByClassName('reminders');
 
         // Check if the remindersSection exists
-        console.log("Reminders section:", remindersSection);
-        if (!remindersSection || remindersSection.length === 0) {
-            console.error('Reminders section not found or is empty.');
-            return;
-        }
+        
+        // if (!remindersSection || remindersSection.length === 0) {
+        //     console.error('Reminders section not found or is empty.');
+        //     return;
+        // }
 
         // Get the first element in the remindersSection NodeList
-        const remindersElement = remindersSection[0];
+        if (remindersSection){
+            console.log("Reminders section:", remindersSection);
+            const remindersElement = remindersSection[0];
 
-        remindersElement.innerHTML = '';
+            if (remindersElement){
+                remindersElement.innerHTML = '';
+            }            
 
-        // Iterate through notifications and render each one
-        Object.entries(notifications).forEach(([clubName, notification]) => {
-            const notificationDiv = document.createElement('div');
-            notificationDiv.setAttribute('class', 'notification border-solid border-[#ccc] p-2 rounded-s bg-[#aabeda] hover:bg-[#f0f0f0] cursor-pointer');
+            // Iterate through notifications and render each one
+            Object.entries(notifications).forEach(([clubName, notification]) => {
+                const notificationDiv = document.createElement('div');
+                notificationDiv.setAttribute('class', 'notification border-solid border-[#ccc] p-2 rounded-s bg-[#aabeda] hover:bg-[#f0f0f0] cursor-pointer');
 
 
-            // Parse the timestamp and format it
-            let timestamp;
-            if (notification.timestamp instanceof Timestamp) {
-                timestamp = notification.timestamp.toDate();
-            } else if (typeof notification.timestamp === 'string') {
-                timestamp = new Date(notification.timestamp);
-            } else if (notification.timestamp instanceof Date) {
-                timestamp = notification.timestamp;
-            } else {
-                console.error('Invalid timestamp format:', notification.timestamp);
-                return;
-            }
+                // Parse the timestamp and format it
+                let timestamp;
+                if (notification.timestamp instanceof Timestamp) {
+                    timestamp = notification.timestamp.toDate();
+                } else if (typeof notification.timestamp === 'string') {
+                    timestamp = new Date(notification.timestamp);
+                } else if (notification.timestamp instanceof Date) {
+                    timestamp = notification.timestamp;
+                } else {
+                    console.error('Invalid timestamp format:', notification.timestamp);
+                    return;
+                }
 
-            // Format timestamp to display hours and minutes
-            const formattedTimestamp = `${timestamp.getHours()}:${('0' + timestamp.getMinutes()).slice(-2)}`;
+                // Format timestamp to display hours and minutes
+                const formattedTimestamp = `${timestamp.getHours()}:${('0' + timestamp.getMinutes()).slice(-2)}`;
 
-            // Create HTML content for notification
-            notificationDiv.innerHTML = `
-                <div class="notification-header">
-                    <small>${formattedTimestamp}</small>
-                </div>
-                <div class="notification-content">
-                    <p class="mx-5 my-0"><strong>${clubName}:</strong></p>
-                    <p class="mx-5 my-0">${notification.message}</p>
-                </div>
-            `;
+                // Create HTML content for notification
+                notificationDiv.innerHTML = `
+                    <div class="notification-header">
+                        <small>${formattedTimestamp}</small>
+                    </div>
+                    <div class="notification-content">
+                        <p class="mx-5 my-0"><strong>${clubName}:</strong></p>
+                        <p class="mx-5 my-0">${notification.message}</p>
+                    </div>
+                `;
 
-            // Append notification div to reminders section
-            remindersElement.appendChild(notificationDiv);
-        });
+                // Append notification div to reminders section
+                if (remindersElement){
+                    remindersElement.appendChild(notificationDiv);
+                }
+            });
+        }
     } catch (error) {
         console.error('Error rendering notifications:', error);
     }

@@ -476,7 +476,7 @@ async function setGeneralPage(username, clubName) {
 
             const execGeneralContainer = document.createElement('div');
             // execGeneralContainer.classList.add('exec-gen');
-            execGeneralContainer.classList = "exec-gen flex flex-row responsive-container gap-8 w-full px-3 py-5";
+            execGeneralContainer.classList = "exec-gen flex flex-row gen-responsive-container gap-8 w-full px-3 py-5";
 
             // create content for the broadcast section
             const broadcastSectionContainer = document.createElement('div');
@@ -642,7 +642,7 @@ async function setGeneralPage(username, clubName) {
 
             // Generate Dynamic content
             const memberContainer = document.createElement('div');
-            memberContainer.classList.add('member-gen');
+            memberContainer.classList = "member-gen flex flex-row gen-responsive-container gap-8 w-full px-3 py-5";
 
             // Get main container
             // Append child to main
@@ -656,15 +656,14 @@ async function setGeneralPage(username, clubName) {
             if (applicationStatus == "pending") {
                 // Status is pending, create pending html
                 const acceptanceHolder = document.createElement('div');
-                acceptanceHolder.classList.add('acceptance-status');
-
+                acceptanceHolder.classList = "acceptance-status w-full md:w-1/3 min-w-0 bg-gray-800 text-white p-4 rounded-lg shadow-lg";
                 const acceptanceLabelHolder = document.createElement('div');
-                acceptanceLabelHolder.classList.add('acceptance-status-label');
-                acceptanceLabelHolder.innerHTML = `<h2>Acceptance Status</h2>`;
+                acceptanceLabelHolder.classList = "acceptance-status-label broadcast-section-label bg-blue-600 p-4 rounded-t-lg text-center text-xl font-bold";
+                acceptanceLabelHolder.innerHTML = `Acceptance Status`;
 
                 const acceptanceContent = document.createElement('div');
-                acceptanceContent.classList.add('acceptance-status-status');
-                acceptanceContent.innerHTML = `<br><p>Pending</p>`;
+                acceptanceContent.classList = "acceptance-status-status bg-gray-900 p-6 rounded-lg shadow-lg";
+                acceptanceContent.innerHTML = `<br><p class="w-fit text-center bg-blue-600 hover:bg-blue-700 px-5 py-2 rounded text-white flex items-center justify-between mx-auto">Pending</p>`;
 
                 // Append HTML to holder
                 acceptanceHolder.appendChild(acceptanceLabelHolder);
@@ -672,11 +671,11 @@ async function setGeneralPage(username, clubName) {
 
                 // create HTML for table content to store user's application
                 const userForm = document.createElement('div');
-                userForm.classList.add('user-application-form');
+                userForm.classList = "user-application-form w-full md:w-2/3 min-w-0 bg-gray-800 text-white p-4 rounded-lg shadow-lg";
 
                 const formLabel = document.createElement('div');
-                formLabel.classList.add('application-form-label');
-                formLabel.innerHTML = `<h2>Your Application Form</h2>`;
+                formLabel.classList = "application-form-label bg-blue-600 p-4 rounded-t-lg text-center text-xl font-bold";
+                formLabel.innerHTML = `Your Application Form`;
 
                 const breakElement = document.createElement('br');
 
@@ -692,24 +691,24 @@ async function setGeneralPage(username, clubName) {
                 const formContent = document.createElement('div');
                 formContent.classList.add('application-form-content');
                 formContent.innerHTML = `
-              <table class="application-form-content-table">
+              <table class="application-form-content-table w-full table-auto border-collapse">
                               <thead>
                                   <tr>
-                                      <th>Motivation</th>
-                                      <th>Relevant Skills</th>
-                                      <th>Expectations</th>
-                                      <th>Want to Lead?</th>
-                                      <th>Availability</th>
+                                      <th class="px-4 py-2 border-b text-left bg-[rgba(70,117,147,0.73)]>Motivation</th>
+                                      <th class="px-4 py-2 border-b text-left bg-[rgba(70,117,147,0.73)]>Relevant Skills</th>
+                                      <th class="px-4 py-2 border-b text-left bg-[rgba(70,117,147,0.73)]>Expectations</th>
+                                      <th class="px-4 py-2 border-b text-left bg-[rgba(70,117,147,0.73)]>Want to Lead?</th>
+                                      <th class="px-4 py-2 border-b text-left bg-[rgba(70,117,147,0.73)]>Availability</th>
                                   </tr>
                               </thead>
                               <tbody>
                                   
-                                  <tr>
-                                      <td class="motivation">${motivation}</td>
-                                      <td class="skills">${skills}</td>
-                                      <td class="expectations">${expectations}</td>
-                                      <td class="leadershipRoles">${leadershipRoles}</td>
-                                      <td class="availability">${availability}</td>
+                                  <tr class="border-b border-gray-700>
+                                      <td class="motivation px-4 py-2">${motivation}</td>
+                                      <td class="skills px-4 py-2">${skills}</td>
+                                      <td class="expectations px-4 py-2">${expectations}</td>
+                                      <td class="leadershipRoles px-4 py-2">${leadershipRoles}</td>
+                                      <td class="availability px-4 py-2">${availability}</td>
                                   </tr>
                               </tbody>
                           </table>
